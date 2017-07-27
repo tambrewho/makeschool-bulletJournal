@@ -13,6 +13,7 @@
 		0B4415741F290B0D0086514E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4415721F290B0D0086514E /* LaunchScreen.storyboard */; };
 		0B44157F1F290B910086514E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44157E1F290B910086514E /* HomeViewController.swift */; };
 		0B44158B1F29152D0086514E /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4415891F29152D0086514E /* ToDoListTableViewController.swift */; };
+		0B44158E1F29240E0086514E /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44158D1F29240E0086514E /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0B4415751F290B0D0086514E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B44157E1F290B910086514E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0B4415891F29152D0086514E /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
+		0B44158D1F29240E0086514E /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		0B4415861F2910660086514E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0B44158D1F29240E0086514E /* ToDoCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				0B44156A1F290B0D0086514E /* AppDelegate.swift in Sources */,
 				0B44157F1F290B910086514E /* HomeViewController.swift in Sources */,
 				0B44158B1F29152D0086514E /* ToDoListTableViewController.swift in Sources */,
+				0B44158E1F29240E0086514E /* ToDoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
