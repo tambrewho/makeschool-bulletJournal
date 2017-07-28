@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gqF-AO-iqn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weekly Planner -->
+        <scene sceneID="1dp-h4-eku">
+            <objects>
+                <viewController id="tve-I6-MXa" customClass="ToDoListViewController" customModule="bulletJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VOq-Vg-o7R"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zgf-Ln-hcL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xn7-nk-UHL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8bp-5d-xVW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="92" id="fgl-vb-1oV" customClass="ToDoTableViewCell" customModule="bulletJournal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fgl-vb-1oV" id="DDu-bx-V7d">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T4-5m-qhI">
+                                                    <rect key="frame" x="18" y="8" width="74" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su2-E5-QeJ">
+                                                    <rect key="frame" x="100" y="4" width="83" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.95735677317796264" green="0.84912627033973864" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Tanya :D"/>
+                                                    <connections>
+                                                        <action selector="tanyaButtonTapped:" destination="fgl-vb-1oV" eventType="touchUpInside" id="aSM-R8-G9M"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="weekdayLabel" destination="2T4-5m-qhI" id="n6g-Yc-kJV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tve-I6-MXa" id="GjA-PM-GcL"/>
+                                    <outlet property="delegate" destination="tve-I6-MXa" id="o4z-7i-fJX"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIw-tl-0Di">
+                                <rect key="frame" x="10" y="9" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8bp-5d-xVW" secondAttribute="bottom" id="4Ql-4b-ENz"/>
+                            <constraint firstItem="8bp-5d-xVW" firstAttribute="leading" secondItem="Xn7-nk-UHL" secondAttribute="leading" id="5Tk-dZ-t0B"/>
+                            <constraint firstAttribute="trailing" secondItem="8bp-5d-xVW" secondAttribute="trailing" id="5tu-vf-8zC"/>
+                            <constraint firstItem="8bp-5d-xVW" firstAttribute="top" secondItem="Xn7-nk-UHL" secondAttribute="top" id="9V0-zn-zap"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weekly Planner " id="91f-jH-W2b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7R2-pv-3m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085.5999999999999" y="289.20539730134936"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="PKX-P5-idP">
+            <objects>
+                <viewController id="JVP-1G-e0Y" customClass="HomeViewController" customModule="bulletJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JdT-Tz-Mev"/>
+                        <viewControllerLayoutGuide type="bottom" id="c6A-7E-f1e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5VS-UT-hFO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeTab" selectedImage="HomeTabSelected" id="rIU-3B-gA7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sV6-7k-N6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="-465"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QdI-0F-xsC">
+            <objects>
+                <tabBarController id="gqF-AO-iqn" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="NoD-zB-jc6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="JVP-1G-e0Y" kind="relationship" relationship="viewControllers" id="s4E-Zu-1ql"/>
+                        <segue destination="ElM-ic-XiN" kind="relationship" relationship="viewControllers" id="H5Z-yo-8dY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ayP-cv-IS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-647" y="-137"/>
+        </scene>
+        <!--To-Do List-->
+        <scene sceneID="8z6-8z-6PG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8U-nE-iPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElM-ic-XiN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="To-Do List" image="MessagesTab" selectedImage="MessagesTabSelected" id="r63-hz-FCN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gfk-lt-Riy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tve-I6-MXa" kind="relationship" relationship="rootViewController" id="VfG-fR-PeM"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="305" y="291"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="HomeTab" width="22" height="23"/>
+        <image name="HomeTabSelected" width="22" height="23"/>
+        <image name="MessagesTab" width="27" height="23"/>
+        <image name="MessagesTabSelected" width="27" height="23"/>
+    </resources>
+</document>
