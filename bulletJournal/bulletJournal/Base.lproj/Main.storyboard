@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,37 +22,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8bp-5d-xVW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8bp-5d-xVW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="92" id="fgl-vb-1oV" customClass="ToDoTableViewCell" customModule="bulletJournal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="35" id="fgl-vb-1oV" customClass="ToDoTableViewCell" customModule="bulletJournal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fgl-vb-1oV" id="DDu-bx-V7d">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T4-5m-qhI">
-                                                    <rect key="frame" x="18" y="8" width="74" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su2-E5-QeJ">
-                                                    <rect key="frame" x="100" y="4" width="83" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.95735677317796264" green="0.84912627033973864" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="Tanya :D"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-gf-ZU1" userLabel="Check Button">
+                                                    <rect key="frame" x="8" y="3" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="4H4-g6-lYT"/>
+                                                        <constraint firstAttribute="height" constant="22" id="5jN-nj-vIa"/>
+                                                    </constraints>
+                                                    <state key="normal" image="CheckBox"/>
                                                     <connections>
-                                                        <action selector="tanyaButtonTapped:" destination="fgl-vb-1oV" eventType="touchUpInside" id="aSM-R8-G9M"/>
+                                                        <action selector="checkButtonTapped:" destination="fgl-vb-1oV" eventType="touchUpInside" id="5ro-c2-zhi"/>
                                                     </connections>
                                                 </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-7U-NbP" userLabel="Task Text View">
+                                                    <rect key="frame" x="38" y="3" width="329" height="22"/>
+                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="HXV-R1-K8t"/>
+                                                        <constraint firstAttribute="width" constant="329" id="rKK-L1-LGi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="leading" secondItem="DDu-bx-V7d" secondAttribute="leadingMargin" id="2Uc-Lk-hQb"/>
+                                                <constraint firstAttribute="bottom" secondItem="VCu-7U-NbP" secondAttribute="bottom" constant="10" id="8HN-Dc-uO1"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="3" id="Zlj-Pa-e0K"/>
+                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="top" secondItem="VCu-7U-NbP" secondAttribute="top" id="n69-c0-ceH"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="leading" secondItem="j3M-gf-ZU1" secondAttribute="trailing" constant="8" symbolic="YES" id="ocd-6i-Gcw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="weekdayLabel" destination="2T4-5m-qhI" id="n6g-Yc-kJV"/>
+                                            <outlet property="checkButton" destination="j3M-gf-ZU1" id="7fP-I3-0mL"/>
+                                            <outlet property="taskTextView" destination="VCu-7U-NbP" id="auL-fg-XHm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,7 +88,16 @@
                             <constraint firstItem="8bp-5d-xVW" firstAttribute="top" secondItem="Xn7-nk-UHL" secondAttribute="top" id="9V0-zn-zap"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Weekly Planner " id="91f-jH-W2b"/>
+                    <navigationItem key="navigationItem" title="Weekly Planner " id="91f-jH-W2b">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7k6-Wm-0gv" userLabel="Add Task Item">
+                            <connections>
+                                <action selector="plusButtonTappedWithSender:" destination="tve-I6-MXa" id="hdt-Zb-twq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="toDoTableView" destination="8bp-5d-xVW" id="9BD-PI-PBU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7R2-pv-3m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,7 +143,6 @@
         <!--To-Do List-->
         <scene sceneID="8z6-8z-6PG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t8U-nE-iPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElM-ic-XiN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="To-Do List" image="MessagesTab" selectedImage="MessagesTabSelected" id="r63-hz-FCN"/>
                     <toolbarItems/>
@@ -133,11 +155,13 @@
                         <segue destination="tve-I6-MXa" kind="relationship" relationship="rootViewController" id="VfG-fR-PeM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8U-nE-iPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="291"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CheckBox" width="28" height="28"/>
         <image name="HomeTab" width="22" height="23"/>
         <image name="HomeTabSelected" width="22" height="23"/>
         <image name="MessagesTab" width="27" height="23"/>
