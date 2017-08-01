@@ -26,7 +26,6 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     private func updateCheckButton() {
-        
         switch todoItem.status {
         case .notStarted:
             checkButton.setBackgroundImage(UIImage(named: "CheckBox"), for: .normal)
@@ -35,7 +34,6 @@ class ToDoTableViewCell: UITableViewCell {
         case .finished:
             checkButton.setBackgroundImage(UIImage(named: "DoubleDashedBox"), for: .normal)
         }
-        
     }
     
     override func awakeFromNib() {

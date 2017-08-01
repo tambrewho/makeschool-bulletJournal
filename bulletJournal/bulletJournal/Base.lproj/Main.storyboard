@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Weekly Planner -->
+        <!--Weekly Planner-->
         <scene sceneID="1dp-h4-eku">
             <objects>
-                <viewController id="tve-I6-MXa" customClass="ToDoListViewController" customModule="bulletJournal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tve-I6-MXa" userLabel="Weekly Planner" customClass="ToDoListViewController" customModule="bulletJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VOq-Vg-o7R"/>
                         <viewControllerLayoutGuide type="bottom" id="Zgf-Ln-hcL"/>
@@ -34,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-gf-ZU1" userLabel="Check Button">
-                                                    <rect key="frame" x="8" y="3" width="22" height="22"/>
+                                                    <rect key="frame" x="-44" y="7" width="22" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="22" id="4H4-g6-lYT"/>
                                                         <constraint firstAttribute="height" constant="22" id="5jN-nj-vIa"/>
@@ -45,10 +45,10 @@
                                                     </connections>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-7U-NbP" userLabel="Task Text View">
-                                                    <rect key="frame" x="38" y="3" width="329" height="22"/>
+                                                    <rect key="frame" x="-17" y="7" width="329" height="28"/>
                                                     <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="HXV-R1-K8t"/>
+                                                        <constraint firstAttribute="height" constant="28" id="9lX-3T-a79"/>
                                                         <constraint firstAttribute="width" constant="329" id="rKK-L1-LGi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -56,11 +56,13 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="leading" secondItem="DDu-bx-V7d" secondAttribute="leadingMargin" id="2Uc-Lk-hQb"/>
-                                                <constraint firstAttribute="bottom" secondItem="VCu-7U-NbP" secondAttribute="bottom" constant="10" id="8HN-Dc-uO1"/>
-                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="3" id="Zlj-Pa-e0K"/>
-                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="top" secondItem="VCu-7U-NbP" secondAttribute="top" id="n69-c0-ceH"/>
-                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="leading" secondItem="j3M-gf-ZU1" secondAttribute="trailing" constant="8" symbolic="YES" id="ocd-6i-Gcw"/>
+                                                <constraint firstAttribute="bottom" secondItem="j3M-gf-ZU1" secondAttribute="bottom" constant="6" id="A6U-dO-yL4"/>
+                                                <constraint firstAttribute="bottom" secondItem="VCu-7U-NbP" secondAttribute="bottom" constant="6" id="AFS-uU-c9a"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="7" id="F8j-sD-T5J"/>
+                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="7" id="HfA-lS-o8M"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="j3M-gf-ZU1" secondAttribute="top" id="cxd-6M-hA2"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="leading" secondItem="j3M-gf-ZU1" secondAttribute="trailing" constant="5" id="ufz-9l-jlW"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="trailing" secondItem="DDu-bx-V7d" secondAttribute="trailingMargin" id="w1N-pv-p0p"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -90,6 +92,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Weekly Planner " id="91f-jH-W2b">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7k6-Wm-0gv" userLabel="Add Task Item">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="plusButtonTappedWithSender:" destination="tve-I6-MXa" id="hdt-Zb-twq"/>
                             </connections>
@@ -101,26 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7R2-pv-3m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085.5999999999999" y="289.20539730134936"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="PKX-P5-idP">
-            <objects>
-                <viewController id="JVP-1G-e0Y" customClass="HomeViewController" customModule="bulletJournal" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JdT-Tz-Mev"/>
-                        <viewControllerLayoutGuide type="bottom" id="c6A-7E-f1e"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5VS-UT-hFO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="HomeTab" selectedImage="HomeTabSelected" id="rIU-3B-gA7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sV6-7k-N6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="306" y="-465"/>
+            <point key="canvasLocation" x="-1818" y="661"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QdI-0F-xsC">
@@ -132,8 +116,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JVP-1G-e0Y" kind="relationship" relationship="viewControllers" id="s4E-Zu-1ql"/>
                         <segue destination="ElM-ic-XiN" kind="relationship" relationship="viewControllers" id="H5Z-yo-8dY"/>
+                        <segue destination="o73-H3-505" kind="relationship" relationship="viewControllers" id="sQZ-H4-S2f"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayP-cv-IS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,9 +130,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElM-ic-XiN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="To-Do List" image="MessagesTab" selectedImage="MessagesTabSelected" id="r63-hz-FCN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gfk-lt-Riy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gfk-lt-Riy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.53725490196078429" green="0.70588235294117641" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -157,13 +147,163 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8U-nE-iPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="291"/>
+            <point key="canvasLocation" x="-2586" y="661"/>
+        </scene>
+        <!--Habit Tracker-->
+        <scene sceneID="J1o-jW-lst">
+            <objects>
+                <viewController id="v4G-nw-FGH" customClass="HabitTrackerViewController" customModule="bulletJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" id="b5V-F1-ecj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HabitTrackerTableViewCell" id="zyb-cN-IT7" customClass="HabitTrackerTableViewCell" customModule="bulletJournal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="107"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zyb-cN-IT7" id="IfK-qx-pq3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-dz-A4S" userLabel="Habit Text View">
+                                            <rect key="frame" x="10" y="13" width="302" height="26"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="epA-sG-2Uo" userLabel="Weekday Button Stack View">
+                                            <rect key="frame" x="13" y="55" width="324" height="30"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksQ-le-XhF" userLabel="Sunday Button">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.88627450980392153" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="1"/>
+                                                    <state key="normal" title="S"/>
+                                                    <connections>
+                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="Gyu-CJ-NaA"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im5-fU-aOw" userLabel="Monday Button">
+                                                    <rect key="frame" x="49" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="2"/>
+                                                    <state key="normal" title="M"/>
+                                                    <connections>
+                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="whU-Ja-b2d"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHz-Mb-15t" userLabel="Tuesday Button">
+                                                    <rect key="frame" x="98" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                    <state key="normal" title="T"/>
+                                                    <connections>
+                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="gP7-KT-lxB"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-w2-XCY" userLabel="Wednesday Button">
+                                                    <rect key="frame" x="147" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="W"/>
+                                                    <connections>
+                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="1WX-Zy-wh5"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS9-9F-EIc" userLabel="Thursday Button">
+                                                    <rect key="frame" x="196" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="T"/>
+                                                    <connections>
+                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="TwS-lB-cnV"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xH-xx-hg2" userLabel="Friday Button">
+                                                    <rect key="frame" x="245" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                    <state key="normal" title="F"/>
+                                                    <connections>
+                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="D8P-5F-FSo"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-NU-zdy" userLabel="Saturday Button">
+                                                    <rect key="frame" x="294" y="0.0" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="S"/>
+                                                    <connections>
+                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="TqU-4G-Ib1"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="epA-sG-2Uo" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="16" id="0w9-qk-RjK"/>
+                                        <constraint firstItem="epA-sG-2Uo" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="16" id="1uX-fZ-GgK"/>
+                                        <constraint firstItem="UVR-dz-A4S" firstAttribute="leading" secondItem="IfK-qx-pq3" secondAttribute="leadingMargin" constant="2" id="9cI-qT-Fce"/>
+                                        <constraint firstItem="epA-sG-2Uo" firstAttribute="leading" secondItem="IfK-qx-pq3" secondAttribute="leadingMargin" constant="5" id="S9N-2l-JdK"/>
+                                        <constraint firstItem="UVR-dz-A4S" firstAttribute="top" secondItem="IfK-qx-pq3" secondAttribute="topMargin" constant="5" id="h3A-3C-wIH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UVR-dz-A4S" secondAttribute="trailing" constant="55" id="jKq-31-Nn6"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="epA-sG-2Uo" secondAttribute="bottom" constant="14" id="s5Q-jR-JO9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="habitTextView" destination="UVR-dz-A4S" id="Num-s3-UAZ"/>
+                                    <outletCollection property="buttons" destination="ksQ-le-XhF" collectionClass="NSMutableArray" id="zI6-IB-M8X"/>
+                                    <outletCollection property="buttons" destination="im5-fU-aOw" collectionClass="NSMutableArray" id="F35-sM-HoA"/>
+                                    <outletCollection property="buttons" destination="BHz-Mb-15t" collectionClass="NSMutableArray" id="uys-TS-Iji"/>
+                                    <outletCollection property="buttons" destination="yM1-w2-XCY" collectionClass="NSMutableArray" id="UxC-1P-yYA"/>
+                                    <outletCollection property="buttons" destination="sS9-9F-EIc" collectionClass="NSMutableArray" id="5wH-Gr-o2F"/>
+                                    <outletCollection property="buttons" destination="7xH-xx-hg2" collectionClass="NSMutableArray" id="tV4-ii-Dil"/>
+                                    <outletCollection property="buttons" destination="VuT-NU-zdy" collectionClass="NSMutableArray" id="eO7-Vu-x37"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="v4G-nw-FGH" id="wQF-FC-tcV"/>
+                            <outlet property="delegate" destination="v4G-nw-FGH" id="SIs-0V-xq3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Habit Tracker" id="ZVb-Pr-eRj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="15L-Td-nbE" userLabel="Add Habit Item">
+                            <connections>
+                                <action selector="addHabitButtonTapped:" destination="v4G-nw-FGH" id="jYg-KH-e9P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="HabitTrackerTableView" destination="b5V-F1-ecj" id="A9Z-8p-EhW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igs-RQ-V6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="661"/>
+        </scene>
+        <!--Habits-->
+        <scene sceneID="unY-2N-pKb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o73-H3-505" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Habits" image="HabitTracker" selectedImage="HabitTrackerSelected" id="A4e-TC-8MS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="P4d-Ck-j6n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.53725490196078429" green="0.70588235294117641" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="v4G-nw-FGH" kind="relationship" relationship="rootViewController" id="Qkm-kf-cuW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZyA-9D-QPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-948" y="661"/>
         </scene>
     </scenes>
     <resources>
         <image name="CheckBox" width="28" height="28"/>
-        <image name="HomeTab" width="22" height="23"/>
-        <image name="HomeTabSelected" width="22" height="23"/>
+        <image name="HabitTracker" width="22" height="30"/>
+        <image name="HabitTrackerSelected" width="22" height="30"/>
         <image name="MessagesTab" width="27" height="23"/>
         <image name="MessagesTabSelected" width="27" height="23"/>
     </resources>

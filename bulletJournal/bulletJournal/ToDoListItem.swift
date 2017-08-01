@@ -14,7 +14,6 @@ enum ToDoListItemStatus {
     case finished
 }
 
-
 class ToDoListItem {
     var text: String?
     var status: ToDoListItemStatus = .notStarted
