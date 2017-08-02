@@ -20,14 +20,28 @@ class HabitTrackerTableViewCell: UITableViewCell {
     }
     
     private func updateViews() {
-        habitTextView.text = habitTrackerItem.text
+        habitTextView.text = habitTrackerItem.title
+        
+        for index in 0..<habitTrackerItem.dayItems.count {
+            
+            let button = buttons[index]
+            let dayItem = habitTrackerItem.dayItems[index]
+            
+            if dayItem.selected {
+                button.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 0.2)
+            } else {
+                button.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.1)
+            }
+            
+        }
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         habitTextView.delegate = self
         
-        buttons.forEach({ $0.layer.cornerRadius = 15 })
+        buttons.forEach({ $0.layer.cornerRadius = 21.5 })
         
     }
 
@@ -38,8 +52,18 @@ class HabitTrackerTableViewCell: UITableViewCell {
     }
     
     @IBAction func buttonWasTapped(sender: UIButton) {
-        print("lol")
+        print("weekday button was tapped")
         
+        let buttonIndex = buttons.index(of: sender)!
+        let dayItem = habitTrackerItem.dayItems[buttonIndex]
+        
+        dayItem.selected = !dayItem.selected
+        
+        if dayItem.selected {
+            
+        } else {
+           
+        }
         
     }
     
@@ -48,7 +72,7 @@ class HabitTrackerTableViewCell: UITableViewCell {
 extension HabitTrackerTableViewCell: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        habitTrackerItem.text = textView.text
+        //habitTrackerItem.text = textView.text
     }
 }
 

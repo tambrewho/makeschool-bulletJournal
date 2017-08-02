@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gqF-AO-iqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gqF-AO-iqn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-gf-ZU1" userLabel="Check Button">
-                                                    <rect key="frame" x="-44" y="7" width="22" height="28"/>
+                                                    <rect key="frame" x="11" y="7" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="22" id="4H4-g6-lYT"/>
                                                         <constraint firstAttribute="height" constant="22" id="5jN-nj-vIa"/>
@@ -45,7 +46,7 @@
                                                     </connections>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-7U-NbP" userLabel="Task Text View">
-                                                    <rect key="frame" x="-17" y="7" width="329" height="28"/>
+                                                    <rect key="frame" x="38" y="7" width="329" height="28"/>
                                                     <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="9lX-3T-a79"/>
@@ -56,11 +57,10 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="j3M-gf-ZU1" secondAttribute="bottom" constant="6" id="A6U-dO-yL4"/>
-                                                <constraint firstAttribute="bottom" secondItem="VCu-7U-NbP" secondAttribute="bottom" constant="6" id="AFS-uU-c9a"/>
                                                 <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="7" id="F8j-sD-T5J"/>
                                                 <constraint firstItem="j3M-gf-ZU1" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="7" id="HfA-lS-o8M"/>
                                                 <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="j3M-gf-ZU1" secondAttribute="top" id="cxd-6M-hA2"/>
+                                                <constraint firstAttribute="bottom" secondItem="VCu-7U-NbP" secondAttribute="bottom" id="fnx-G4-RYw"/>
                                                 <constraint firstItem="VCu-7U-NbP" firstAttribute="leading" secondItem="j3M-gf-ZU1" secondAttribute="trailing" constant="5" id="ufz-9l-jlW"/>
                                                 <constraint firstItem="VCu-7U-NbP" firstAttribute="trailing" secondItem="DDu-bx-V7d" secondAttribute="trailingMargin" id="w1N-pv-p0p"/>
                                             </constraints>
@@ -117,7 +117,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ElM-ic-XiN" kind="relationship" relationship="viewControllers" id="H5Z-yo-8dY"/>
-                        <segue destination="o73-H3-505" kind="relationship" relationship="viewControllers" id="sQZ-H4-S2f"/>
+                        <segue destination="8Ax-Jz-Pp9" kind="relationship" relationship="viewControllers" id="g9T-j5-CBp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayP-cv-IS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,7 +130,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElM-ic-XiN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="To-Do List" image="MessagesTab" selectedImage="MessagesTabSelected" id="r63-hz-FCN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gfk-lt-Riy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gfk-lt-Riy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,89 +162,128 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zyb-cN-IT7" id="IfK-qx-pq3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-dz-A4S" userLabel="Habit Text View">
-                                            <rect key="frame" x="10" y="13" width="302" height="26"/>
+                                            <rect key="frame" x="8" y="13" width="361" height="31"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="Hfn-l6-YUu"/>
+                                                <constraint firstAttribute="width" constant="361" id="WFX-Xo-adH"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="epA-sG-2Uo" userLabel="Weekday Button Stack View">
-                                            <rect key="frame" x="13" y="55" width="324" height="30"/>
-                                            <subviews>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksQ-le-XhF" userLabel="Sunday Button">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.88627450980392153" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="1"/>
-                                                    <state key="normal" title="S"/>
-                                                    <connections>
-                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="Gyu-CJ-NaA"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im5-fU-aOw" userLabel="Monday Button">
-                                                    <rect key="frame" x="49" y="0.0" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="2"/>
-                                                    <state key="normal" title="M"/>
-                                                    <connections>
-                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="whU-Ja-b2d"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHz-Mb-15t" userLabel="Tuesday Button">
-                                                    <rect key="frame" x="98" y="0.0" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                    <state key="normal" title="T"/>
-                                                    <connections>
-                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="gP7-KT-lxB"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-w2-XCY" userLabel="Wednesday Button">
-                                                    <rect key="frame" x="147" y="0.0" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="W"/>
-                                                    <connections>
-                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="1WX-Zy-wh5"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS9-9F-EIc" userLabel="Thursday Button">
-                                                    <rect key="frame" x="196" y="0.0" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="T"/>
-                                                    <connections>
-                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="TwS-lB-cnV"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xH-xx-hg2" userLabel="Friday Button">
-                                                    <rect key="frame" x="245" y="0.0" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                    <state key="normal" title="F"/>
-                                                    <connections>
-                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="D8P-5F-FSo"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-NU-zdy" userLabel="Saturday Button">
-                                                    <rect key="frame" x="294" y="0.0" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="S"/>
-                                                    <connections>
-                                                        <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="TqU-4G-Ib1"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksQ-le-XhF" userLabel="Sunday Button">
+                                            <rect key="frame" x="15" y="52" width="43" height="43"/>
+                                            <color key="backgroundColor" red="0.88627450980392153" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="1"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ksQ-le-XhF" secondAttribute="height" multiplier="1:1" id="zG7-lX-JE8"/>
+                                            </constraints>
+                                            <state key="normal" title="S"/>
+                                            <connections>
+                                                <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="Gyu-CJ-NaA"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im5-fU-aOw" userLabel="Monday Button">
+                                            <rect key="frame" x="65" y="52" width="43" height="43"/>
+                                            <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="2"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="0KB-8x-CuN"/>
+                                            </constraints>
+                                            <state key="normal" title="M"/>
+                                            <connections>
+                                                <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="whU-Ja-b2d"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHz-Mb-15t" userLabel="Tuesday Button">
+                                            <rect key="frame" x="115" y="52" width="43" height="43"/>
+                                            <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="VJq-Jo-6Hl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                            <state key="normal" title="T"/>
+                                            <connections>
+                                                <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="gP7-KT-lxB"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-w2-XCY" userLabel="Wednesday Button">
+                                            <rect key="frame" x="165" y="52" width="43" height="43"/>
+                                            <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="NWT-xD-PrL"/>
+                                            </constraints>
+                                            <state key="normal" title="W"/>
+                                            <connections>
+                                                <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="1WX-Zy-wh5"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS9-9F-EIc" userLabel="Thursday Button">
+                                            <rect key="frame" x="215" y="52" width="43" height="43"/>
+                                            <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="ZE0-M5-03U"/>
+                                            </constraints>
+                                            <state key="normal" title="T"/>
+                                            <connections>
+                                                <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="TwS-lB-cnV"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xH-xx-hg2" userLabel="Friday Button">
+                                            <rect key="frame" x="265" y="52" width="43" height="43"/>
+                                            <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="sz3-1R-Xlq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                            <state key="normal" title="F"/>
+                                            <connections>
+                                                <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="D8P-5F-FSo"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-NU-zdy" userLabel="Saturday Button">
+                                            <rect key="frame" x="315" y="52" width="43" height="43"/>
+                                            <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="S"/>
+                                            <connections>
+                                                <action selector="buttonWasTappedWithSender:" destination="zyb-cN-IT7" eventType="touchUpInside" id="TqU-4G-Ib1"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="epA-sG-2Uo" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="16" id="0w9-qk-RjK"/>
-                                        <constraint firstItem="epA-sG-2Uo" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="16" id="1uX-fZ-GgK"/>
-                                        <constraint firstItem="UVR-dz-A4S" firstAttribute="leading" secondItem="IfK-qx-pq3" secondAttribute="leadingMargin" constant="2" id="9cI-qT-Fce"/>
-                                        <constraint firstItem="epA-sG-2Uo" firstAttribute="leading" secondItem="IfK-qx-pq3" secondAttribute="leadingMargin" constant="5" id="S9N-2l-JdK"/>
-                                        <constraint firstItem="UVR-dz-A4S" firstAttribute="top" secondItem="IfK-qx-pq3" secondAttribute="topMargin" constant="5" id="h3A-3C-wIH"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="UVR-dz-A4S" secondAttribute="trailing" constant="55" id="jKq-31-Nn6"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="epA-sG-2Uo" secondAttribute="bottom" constant="14" id="s5Q-jR-JO9"/>
+                                        <constraint firstItem="BHz-Mb-15t" firstAttribute="leading" secondItem="im5-fU-aOw" secondAttribute="trailing" constant="7" id="04s-4S-Xai"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="sS9-9F-EIc" secondAttribute="bottom" constant="4" id="3Cr-G4-TGV"/>
+                                        <constraint firstItem="7xH-xx-hg2" firstAttribute="leading" secondItem="sS9-9F-EIc" secondAttribute="trailing" constant="7" id="4LA-To-a8f"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7xH-xx-hg2" secondAttribute="bottom" constant="4" id="6Qo-N0-MN1"/>
+                                        <constraint firstItem="im5-fU-aOw" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="9O5-XL-B7Y"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UVR-dz-A4S" secondAttribute="trailing" constant="-2" id="AIN-NS-bXl"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BHz-Mb-15t" secondAttribute="bottom" constant="4" id="ANA-u0-AkU"/>
+                                        <constraint firstItem="yM1-w2-XCY" firstAttribute="leading" secondItem="BHz-Mb-15t" secondAttribute="trailing" constant="7" id="Fbb-ks-a8L"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="im5-fU-aOw" secondAttribute="bottom" constant="4" id="H9C-pA-lre"/>
+                                        <constraint firstItem="UVR-dz-A4S" firstAttribute="top" secondItem="IfK-qx-pq3" secondAttribute="top" constant="13" id="HeT-ae-G87"/>
+                                        <constraint firstItem="im5-fU-aOw" firstAttribute="leading" secondItem="ksQ-le-XhF" secondAttribute="trailing" constant="7" id="Jfc-3G-YbX"/>
+                                        <constraint firstItem="UVR-dz-A4S" firstAttribute="leading" secondItem="IfK-qx-pq3" secondAttribute="leading" constant="8" id="KoM-Gg-JFG"/>
+                                        <constraint firstItem="ksQ-le-XhF" firstAttribute="leading" secondItem="IfK-qx-pq3" secondAttribute="leadingMargin" constant="7" id="N26-WJ-E7A"/>
+                                        <constraint firstItem="VuT-NU-zdy" firstAttribute="leading" secondItem="7xH-xx-hg2" secondAttribute="trailing" constant="7" id="Pay-Lc-ceg"/>
+                                        <constraint firstItem="yM1-w2-XCY" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="QIr-xQ-PNH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="VuT-NU-zdy" secondAttribute="bottom" constant="4" id="TiC-PP-QJU"/>
+                                        <constraint firstItem="yM1-w2-XCY" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="Z09-Fd-H24"/>
+                                        <constraint firstItem="7xH-xx-hg2" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="ZUa-2C-jfj"/>
+                                        <constraint firstItem="sS9-9F-EIc" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="cpx-6f-0kj"/>
+                                        <constraint firstItem="ksQ-le-XhF" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="fCu-Cr-BH4"/>
+                                        <constraint firstItem="sS9-9F-EIc" firstAttribute="leading" secondItem="yM1-w2-XCY" secondAttribute="trailing" constant="7" id="g2r-eK-Dg9"/>
+                                        <constraint firstItem="VuT-NU-zdy" firstAttribute="trailing" secondItem="IfK-qx-pq3" secondAttribute="trailingMargin" constant="-9" id="mKo-d5-pJx"/>
+                                        <constraint firstItem="yM1-w2-XCY" firstAttribute="leading" secondItem="BHz-Mb-15t" secondAttribute="trailing" constant="7" id="mRc-N6-Mre"/>
+                                        <constraint firstItem="ksQ-le-XhF" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="nBu-OW-OMG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ksQ-le-XhF" secondAttribute="bottom" constant="4" id="qX2-XW-3zo"/>
+                                        <constraint firstItem="VuT-NU-zdy" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="r2w-JH-6b1"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yM1-w2-XCY" secondAttribute="bottom" constant="4" id="wl0-uc-UP3"/>
+                                        <constraint firstItem="BHz-Mb-15t" firstAttribute="top" secondItem="UVR-dz-A4S" secondAttribute="bottom" constant="8" id="zGc-w2-Ws6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -264,40 +303,33 @@
                             <outlet property="delegate" destination="v4G-nw-FGH" id="SIs-0V-xq3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Habit Tracker" id="ZVb-Pr-eRj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="15L-Td-nbE" userLabel="Add Habit Item">
-                            <connections>
-                                <action selector="addHabitButtonTapped:" destination="v4G-nw-FGH" id="jYg-KH-e9P"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Habit Tracker" id="ZVb-Pr-eRj"/>
                     <connections>
                         <outlet property="HabitTrackerTableView" destination="b5V-F1-ecj" id="A9Z-8p-EhW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igs-RQ-V6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-167" y="661"/>
+            <point key="canvasLocation" x="8.8000000000000007" y="698.5007496251875"/>
         </scene>
         <!--Habits-->
-        <scene sceneID="unY-2N-pKb">
+        <scene sceneID="iEe-Y9-tCl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o73-H3-505" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Habits" image="HabitTracker" selectedImage="HabitTrackerSelected" id="A4e-TC-8MS"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Ax-Jz-Pp9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Habits" image="HabitTracker" selectedImage="HabitTrackerSelected" id="UN9-7M-KX3"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="P4d-Ck-j6n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nRd-bZ-BWn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.53725490196078429" green="0.70588235294117641" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="v4G-nw-FGH" kind="relationship" relationship="rootViewController" id="Qkm-kf-cuW"/>
+                        <segue destination="v4G-nw-FGH" kind="relationship" relationship="rootViewController" id="h1x-vn-AuC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZyA-9D-QPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAQ-Cb-gfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-948" y="661"/>
+            <point key="canvasLocation" x="-895" y="699"/>
         </scene>
     </scenes>
     <resources>

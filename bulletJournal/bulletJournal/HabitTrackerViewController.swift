@@ -12,16 +12,14 @@ class HabitTrackerViewController: UIViewController {
 
     @IBOutlet var HabitTrackerTableView: UITableView!
     
+    var items: [HabitTrackerItem] = [HabitTrackerItem(title: "Laundry"),
+                                     HabitTrackerItem(title: "Exercise"),
+                                     HabitTrackerItem(title: "Cooking")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         HabitTrackerTableView.dataSource = self
     }
-    
-    @IBAction func addHabitButtonTapped(_ sender: UIBarButtonItem) {
-        print("add habit button tapped")
-    }
-    
-    
     
 }
 

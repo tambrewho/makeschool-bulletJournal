@@ -9,7 +9,45 @@
 import Foundation
 
 class HabitTrackerItem {
-    var text: String?
-    var selected: Bool?
     
+    var title: String
+    var dayItems: [HabitTrackerDay]
+    
+    init(title: String, dayItems: [HabitTrackerDay] = HabitTrackerDay.entireWeek) {
+        self.title = title
+        self.dayItems = dayItems
+    }
+}
+
+class HabitTrackerDay {
+    
+    var weekday: Weekday
+    var selected: Bool = false
+    
+    init(weekday: Weekday) {
+        self.weekday = weekday
+    }
+    
+    static var entireWeek: [HabitTrackerDay] {
+        get {
+            return [HabitTrackerDay(weekday: .sunday),
+                    HabitTrackerDay(weekday: .monday),
+                    HabitTrackerDay(weekday: .tuesday),
+                    HabitTrackerDay(weekday: .wednesday),
+                    HabitTrackerDay(weekday: .thursday),
+                    HabitTrackerDay(weekday: .friday),
+                    HabitTrackerDay(weekday: .saturday)]
+        }
+    }
+    
+}
+
+enum Weekday: String {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
 }
