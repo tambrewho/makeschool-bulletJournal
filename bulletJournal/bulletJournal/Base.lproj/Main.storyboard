@@ -76,11 +76,6 @@
                                     <outlet property="delegate" destination="tve-I6-MXa" id="o4z-7i-fJX"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIw-tl-0Di">
-                                <rect key="frame" x="10" y="9" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -303,7 +298,13 @@
                             <outlet property="delegate" destination="v4G-nw-FGH" id="SIs-0V-xq3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Habit Tracker" id="ZVb-Pr-eRj"/>
+                    <navigationItem key="navigationItem" title="Habit Tracker" id="ZVb-Pr-eRj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GzR-be-rhN" userLabel="Add Habit Item">
+                            <connections>
+                                <action selector="addHabitButtonTapped:" destination="v4G-nw-FGH" id="5qh-F2-ARW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="HabitTrackerTableView" destination="b5V-F1-ecj" id="A9Z-8p-EhW"/>
                     </connections>
@@ -318,9 +319,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Ax-Jz-Pp9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Habits" image="HabitTracker" selectedImage="HabitTrackerSelected" id="UN9-7M-KX3"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nRd-bZ-BWn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nRd-bZ-BWn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.53725490196078429" green="0.70588235294117641" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

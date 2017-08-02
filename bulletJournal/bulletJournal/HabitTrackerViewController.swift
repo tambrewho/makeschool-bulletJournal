@@ -12,13 +12,18 @@ class HabitTrackerViewController: UIViewController {
 
     @IBOutlet var HabitTrackerTableView: UITableView!
     
-    var items: [HabitTrackerItem] = [HabitTrackerItem(title: "Laundry"),
-                                     HabitTrackerItem(title: "Exercise"),
+    var habitItems: [HabitTrackerItem] = [HabitTrackerItem(title: "Cardio"),
+                                     HabitTrackerItem(title: "Weights"),
                                      HabitTrackerItem(title: "Cooking")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         HabitTrackerTableView.dataSource = self
+    }
+    
+    @IBAction func addHabitButtonTapped(_ sender: UIBarButtonItem) {
+        habitItems.append(HabitTrackerItem(title: ""))
+        HabitTrackerTableView.reloadData()
     }
     
 }
@@ -31,11 +36,14 @@ extension HabitTrackerViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 7
+        return habitItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HabitTrackerTableViewCell", for: indexPath) as! HabitTrackerTableViewCell
+        
+        let item = habitItems[indexPath.row]
+        cell.habitTrackerItem = item
         
         return cell
     }

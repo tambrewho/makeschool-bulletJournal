@@ -51,3 +51,6 @@ enum Weekday: String {
     case friday
     case saturday
 }
+
+
+
