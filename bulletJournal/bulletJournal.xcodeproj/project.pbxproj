@@ -17,6 +17,12 @@
 		0B4415D31F2A654B0086514E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4415D21F2A654B0086514E /* HomeViewController.swift */; };
 		0B4415D91F2A690E0086514E /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4415D81F2A690E0086514E /* ToDoTableViewCell.swift */; };
 		0B4415DE1F2B6D790086514E /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4415DD1F2B6D790086514E /* ToDoListViewController.swift */; };
+		0BFAAED21F336BA2002A93F3 /* MoodTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAAED11F336BA2002A93F3 /* MoodTrackerViewController.swift */; };
+		0BFAAED61F33B834002A93F3 /* MoodPaletteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFAAED41F33B834002A93F3 /* MoodPaletteView.xib */; };
+		0BFAAED81F33B9FD002A93F3 /* MoodPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */; };
+		0BFAAEDA1F34AF17002A93F3 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAAED91F34AF17002A93F3 /* Mood.swift */; };
+		0BFAAEDC1F34B367002A93F3 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAAEDB1F34B367002A93F3 /* MoodCollectionViewCell.swift */; };
+		0BFAAEDE1F34B3F6002A93F3 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFAAEDD1F34B3F6002A93F3 /* MoodCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		0B4415D21F2A654B0086514E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0B4415D81F2A690E0086514E /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		0B4415DD1F2B6D790086514E /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
+		0BFAAED11F336BA2002A93F3 /* MoodTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodTrackerViewController.swift; sourceTree = "<group>"; };
+		0BFAAED41F33B834002A93F3 /* MoodPaletteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodPaletteView.xib; sourceTree = "<group>"; };
+		0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodPaletteView.swift; sourceTree = "<group>"; };
+		0BFAAED91F34AF17002A93F3 /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		0BFAAEDB1F34B367002A93F3 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		0BFAAEDD1F34B3F6002A93F3 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +60,7 @@
 		0B00BAB01F2B9E3300DD88DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0BFAAED91F34AF17002A93F3 /* Mood.swift */,
 				0B00BAB11F2B9E4E00DD88DA /* ToDoListItem.swift */,
 				0B00BABB1F2FBC6400DD88DA /* HabitTrackerItem.swift */,
 			);
@@ -90,6 +103,11 @@
 				0B4415D21F2A654B0086514E /* HomeViewController.swift */,
 				0B4415DD1F2B6D790086514E /* ToDoListViewController.swift */,
 				0B00BAB71F2F82BD00DD88DA /* HabitTrackerViewController.swift */,
+				0BFAAED11F336BA2002A93F3 /* MoodTrackerViewController.swift */,
+				0BFAAED41F33B834002A93F3 /* MoodPaletteView.xib */,
+				0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */,
+				0BFAAEDD1F34B3F6002A93F3 /* MoodCollectionViewCell.xib */,
+				0BFAAEDB1F34B367002A93F3 /* MoodCollectionViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -176,7 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4415C61F2A637F0086514E /* Assets.xcassets in Resources */,
+				0BFAAEDE1F34B3F6002A93F3 /* MoodCollectionViewCell.xib in Resources */,
 				0B046CC41F30E9C20062CE25 /* Main.storyboard in Resources */,
+				0BFAAED61F33B834002A93F3 /* MoodPaletteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,9 +208,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4415BF1F2A637F0086514E /* AppDelegate.swift in Sources */,
+				0BFAAEDC1F34B367002A93F3 /* MoodCollectionViewCell.swift in Sources */,
+				0BFAAED81F33B9FD002A93F3 /* MoodPaletteView.swift in Sources */,
 				0B4415D31F2A654B0086514E /* HomeViewController.swift in Sources */,
+				0BFAAEDA1F34AF17002A93F3 /* Mood.swift in Sources */,
 				0B00BAB81F2F82BD00DD88DA /* HabitTrackerViewController.swift in Sources */,
 				0B4415DE1F2B6D790086514E /* ToDoListViewController.swift in Sources */,
+				0BFAAED21F336BA2002A93F3 /* MoodTrackerViewController.swift in Sources */,
 				0B00BABC1F2FBC6400DD88DA /* HabitTrackerItem.swift in Sources */,
 				0B00BAB21F2B9E4E00DD88DA /* ToDoListItem.swift in Sources */,
 				0B4415D91F2A690E0086514E /* ToDoTableViewCell.swift in Sources */,

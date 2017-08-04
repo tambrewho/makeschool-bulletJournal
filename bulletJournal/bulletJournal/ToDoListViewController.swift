@@ -46,6 +46,12 @@ extension ToDoListViewController:  UITableViewDataSource {
         return cell
     }
     
-
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if editingStyle == .delete {
+                todoItems.remove(at: indexPath.row)
+                tableView.reloadData()
+            }
+        }
+    }
 }

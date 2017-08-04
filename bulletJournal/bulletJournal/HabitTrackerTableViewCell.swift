@@ -76,7 +76,7 @@ class HabitTrackerTableViewCell: UITableViewCell {
 extension HabitTrackerTableViewCell: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        //habitTrackerItem.text = textView.text
+        habitTrackerItem.title = textView.text
     }
 }
 
