@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7R2-pv-3m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2586.4000000000001" y="1396.5517241379312"/>
+            <point key="canvasLocation" x="-1826" y="661"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QdI-0F-xsC">
@@ -323,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igs-RQ-V6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1495" y="1434"/>
+            <point key="canvasLocation" x="-102" y="806"/>
         </scene>
         <!--Habits-->
         <scene sceneID="iEe-Y9-tCl">
@@ -348,7 +348,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAQ-Cb-gfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1495" y="689"/>
+            <point key="canvasLocation" x="-959" y="806"/>
         </scene>
         <!--Mood Tracker-->
         <scene sceneID="wlr-eI-0Jb">
@@ -363,26 +363,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-Au-OOI" customClass="MoodPaletteView" customModule="bulletJournal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="462" width="365" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="tf9-F9-igd"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1D-SP-EFy">
+                                <rect key="frame" x="148" y="453" width="79" height="26"/>
+                                <color key="backgroundColor" red="0.7097254395" green="0.70984917879999998" blue="0.70971763129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showActionSheetButtonTapped:" destination="lKB-Tz-bhQ" eventType="touchUpInside" id="Ds7-N6-iiM"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ykW-nM-pm8">
+                                <rect key="frame" x="0.0" y="382" width="375" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="ThU-FY-WEz"/>
+                                    <constraint firstAttribute="height" constant="72" id="lwr-qi-ukW"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="523890303.435072">
+                                    <!--2017-08-08 13:05:03 +0000-->
+                                </date>
+                            </datePicker>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNe-Uu-ofH" customClass="CalendarView" customModule="bulletJournal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="53" width="375" height="289"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CPa-Au-OOI" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leading" id="0re-3J-pHI"/>
+                            <constraint firstItem="Ula-gT-8fL" firstAttribute="top" secondItem="i1D-SP-EFy" secondAttribute="bottom" constant="139" id="6jU-Ts-HKi"/>
+                            <constraint firstAttribute="trailing" secondItem="ykW-nM-pm8" secondAttribute="trailing" id="7VC-XF-rF0"/>
                             <constraint firstAttribute="bottom" secondItem="CPa-Au-OOI" secondAttribute="bottom" constant="5" id="8mY-6e-RuL"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="CPa-Au-OOI" secondAttribute="bottom" id="C6N-5A-T1P"/>
-                            <constraint firstAttribute="trailing" secondItem="CPa-Au-OOI" secondAttribute="trailing" id="jnM-ts-wKE"/>
+                            <constraint firstItem="ykW-nM-pm8" firstAttribute="top" secondItem="fNe-Uu-ofH" secondAttribute="bottom" constant="40" id="9Ut-iW-09S"/>
+                            <constraint firstItem="i1D-SP-EFy" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leadingMargin" constant="132" id="Sk1-AL-r2w"/>
+                            <constraint firstAttribute="trailing" secondItem="fNe-Uu-ofH" secondAttribute="trailing" id="ZfT-az-ql4"/>
+                            <constraint firstItem="fNe-Uu-ofH" firstAttribute="top" secondItem="P8D-UW-iSP" secondAttribute="top" constant="20" id="aSK-W0-ZXE"/>
+                            <constraint firstItem="ykW-nM-pm8" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leading" id="fQK-7H-qry"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i1D-SP-EFy" secondAttribute="trailing" constant="132" id="kbz-X8-S0W"/>
+                            <constraint firstItem="CPa-Au-OOI" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leading" id="pDP-up-o9f"/>
+                            <constraint firstItem="fNe-Uu-ofH" firstAttribute="top" secondItem="P8D-UW-iSP" secondAttribute="top" constant="20" id="rnc-Vc-qGi"/>
+                            <constraint firstAttribute="trailing" secondItem="CPa-Au-OOI" secondAttribute="trailing" constant="10" id="wbj-pQ-hfH"/>
+                            <constraint firstItem="fNe-Uu-ofH" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leading" id="xKT-QF-ai8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mood Tracker" id="Fl7-Hg-rZx"/>
+                    <connections>
+                        <outlet property="calendarView" destination="fNe-Uu-ofH" id="pCh-Uj-aqO"/>
+                        <outlet property="datePicker" destination="ykW-nM-pm8" id="NVO-cM-xI7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLQ-Pv-tp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452" y="675.11244377811101"/>
+            <point key="canvasLocation" x="1508" y="233.43328335832086"/>
         </scene>
         <!--Mood-->
         <scene sceneID="ear-X5-aRM">
@@ -390,7 +427,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Wl-VE-JiQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mood" image="MoodTracker" selectedImage="MoodTracker" id="0pK-Vq-RWH"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="D05-DM-qCh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D05-DM-qCh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.53725490196078429" green="0.70588235294117641" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -406,7 +443,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ung-3o-v9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-487.19999999999999" y="675.11244377811101"/>
+            <point key="canvasLocation" x="687" y="233"/>
         </scene>
     </scenes>
     <resources>

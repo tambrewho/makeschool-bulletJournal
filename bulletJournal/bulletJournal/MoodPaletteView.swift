@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class MoodPaletteView: UIView {
+@IBDesignable class MoodPaletteView: UIView, Nibloading {
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -33,7 +33,7 @@ import UIKit
     // MARK: - Private Helper Methods
     private func setupCollectionView() {
     
-        let nib = UINib(nibName: "MoodCollectionViewCell",
+        let nib = UINib(nibName: cellIdentifier,
                         bundle: Bundle.main)
         
         collectionView.register(nib,
@@ -41,29 +41,7 @@ import UIKit
         
     }
     
-    // Performs the initial setup.
-    private func setupView() {
-        let view = viewFromNibForClass()
-        view.frame = bounds
-        
-        // Auto-layout stuff.
-        view.autoresizingMask = [
-            UIViewAutoresizing.flexibleWidth,
-            UIViewAutoresizing.flexibleHeight
-        ]
-        // Show the view.
-        addSubview(view)
-    }
     
-    // Loads a XIB file into a view and returns this view.
-    private func viewFromNibForClass() -> UIView {
-        
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        
-        return view
-    }
 }
 
 extension MoodPaletteView: UICollectionViewDataSource {
@@ -74,7 +52,7 @@ extension MoodPaletteView: UICollectionViewDataSource {
         let mood = moods[indexPath.item]
         
         cell.button.backgroundColor = mood.color
-        cell.button.layer.cornerRadius = 34
+        cell.button.layer.cornerRadius = 33.5
         cell.label.text = mood.rawValue.uppercased()
         return cell
     }

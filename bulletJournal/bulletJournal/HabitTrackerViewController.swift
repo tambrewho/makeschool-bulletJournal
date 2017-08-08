@@ -13,9 +13,9 @@ class HabitTrackerViewController: UIViewController {
     @IBOutlet var HabitTrackerTableView: UITableView!
     @IBOutlet weak var displayTimeLabel: UILabel!
     
-    var habitItems: [HabitTrackerItem] = [HabitTrackerItem(title: "Cardio"),
-                                     HabitTrackerItem(title: "Weights"),
-                                     HabitTrackerItem(title: "Cooking")]
+    var habitItems: [HabitTrackerItem] = [HabitTrackerItem(title: "Meditate in the morning"),
+                                     HabitTrackerItem(title: "Cook Dinner"),
+                                     HabitTrackerItem(title: "Drink 8 cups of water")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
