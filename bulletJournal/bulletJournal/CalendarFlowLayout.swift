@@ -33,7 +33,6 @@ class CalendarFlowLayout: UICollectionViewFlowLayout {
         
     }
     
-    
     func applyLayoutAttributes(_ attributes : UICollectionViewLayoutAttributes) {
         
         if attributes.representedElementKind != nil {

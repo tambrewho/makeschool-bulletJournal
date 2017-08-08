@@ -76,9 +76,6 @@ class CalendarHeaderView: UIView {
             lbl.frame = labelFrame
             labelFrame.origin.x += labelFrame.size.width
         }
-        
-        
-        
     }
     
 }

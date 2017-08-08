@@ -30,7 +30,6 @@ let DATE_SELECTED_INDEX = 2
 @objc protocol CalendarViewDelegate {
     
     @objc optional func calendar(_ calendar : CalendarView, canSelectDate date : Date) -> Bool
-    func calendar(_ calendar : CalendarView, didScrollToMonth date : Date) -> Void
     @objc optional func calendar(_ calendar : CalendarView, didDeselectDate date : Date) -> Void
 }
 
@@ -105,8 +104,8 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             let heigh = frame.size.height - HEADER_DEFAULT_HEIGHT
             let width = frame.size.width
             
-            self.headerView.frame   = CGRect(x:0.0, y:0.0, width: frame.size.width, height:HEADER_DEFAULT_HEIGHT)
-            self.calendarView.frame = CGRect(x:0.0, y:HEADER_DEFAULT_HEIGHT, width: width, height: heigh)
+            self.headerView.frame   = CGRect(x:0.0, y:30.0, width: frame.size.width, height:HEADER_DEFAULT_HEIGHT)
+            self.calendarView.frame = CGRect(x:0.0, y:HEADER_DEFAULT_HEIGHT + 28.0, width: width, height: heigh)
             
             let layout = self.calendarView.collectionViewLayout as! UICollectionViewFlowLayout
             layout.itemSize = CGSize(width: width / CGFloat(NUMBER_OF_DAYS_IN_WEEK), height: heigh / CGFloat(MAXIMUM_NUMBER_OF_ROWS))
@@ -220,6 +219,8 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         
     }
     
+    var dateMoods = [String: Mood]()
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let dayCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! CalendarDayCell
@@ -261,22 +262,10 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let yearDate = self.calculateDateBasedOnScrollViewPosition()
-        
-        if  let date = yearDate,
-            let delegate = self.delegate {
-            
-            delegate.calendar(self, didScrollToMonth: date)
-        }
-        
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         let yearDate = self.calculateDateBasedOnScrollViewPosition()
-        
-        if let date = yearDate,
-            let delegate = self.delegate {
-            delegate.calendar(self, didScrollToMonth: date)
-        }
     }
     
     
@@ -305,7 +294,8 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             return nil
         }
         
-        let month = (self.gregorian as NSCalendar).component(NSCalendar.Unit.month, from: yearDate) // get month
+        let month = (self.gregorian as NSCalendar).component(NSCalendar.Unit.month, from: yearDate)
+        // get month
         
         let monthName = DateFormatter().monthSymbols[(month-1) % 12] // 0 indexed array
         
@@ -456,7 +446,6 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             if  date.compare(dispDate) == ComparisonResult.orderedSame {
                 return
             }
-            
             
             // check if the date is within range
             if  date.compare(startDateCache) == ComparisonResult.orderedAscending ||

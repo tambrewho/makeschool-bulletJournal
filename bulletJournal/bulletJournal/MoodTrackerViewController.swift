@@ -12,7 +12,6 @@ import EventKit
 class MoodTrackerViewController: UIViewController, CalendarViewDataSource, CalendarViewDelegate {
     
     @IBOutlet weak var calendarView: CalendarView!
-    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         
@@ -30,7 +29,7 @@ class MoodTrackerViewController: UIViewController, CalendarViewDataSource, Calen
         
         // change the code to get a vertical calender.
         calendarView.direction = .horizontal
-                
+        
         var tomorrowComponents = DateComponents()
         tomorrowComponents.day = 1
         
@@ -44,7 +43,6 @@ class MoodTrackerViewController: UIViewController, CalendarViewDataSource, Calen
         }
         
         self.calendarView.setDisplayDate(today, animated: false)
-        self.datePicker.setDate(today, animated: false)
     }
     
     // MARK : KDCalendarDataSource
@@ -86,27 +84,14 @@ class MoodTrackerViewController: UIViewController, CalendarViewDataSource, Calen
         
     }
     
-    // MARK : KDCalendarDelegate
-    
-    func calendar(_ calendar: CalendarView, didScrollToMonth date : Date) {
-        self.datePicker.setDate(date, animated: true)
-    }
-    
-    
-    // MARK : Events
-    
-    @IBAction func onValueChange(_ picker : UIDatePicker) {
-        self.calendarView.setDisplayDate(picker.date, animated: true)
-    }
-
     @IBAction func showActionSheetButtonTapped(_ sender: UIButton) {
         let myActionSheet = UIAlertController(title: "Test Action Sheet", message: "Different Colors", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         let blueAction = UIAlertAction(title: "Blue", style: UIAlertActionStyle.default)
-            { (ACTION) in
-                sender.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-                print("blue button worked!")
-            }
+        { (ACTION) in
+            sender.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+            print("blue button worked!")
+        }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default)
         { (ACTION) in

@@ -12,27 +12,7 @@ let cellColorToday = UIColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255
 let borderColor = UIColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255.0, alpha: 0.8)
 
 class CalendarDayCell: UICollectionViewCell {
-    
-    var eventsCount = 0 {
-        didSet {
-            for sview in self.dotsView.subviews {
-                sview.removeFromSuperview()
-            }
-            
-            let stride = self.dotsView.frame.size.width / CGFloat(eventsCount+1)
-            let viewHeight = self.dotsView.frame.size.height
-            let halfViewHeight = viewHeight / 2.0
-            
-            for _ in 0..<eventsCount {
-                let frm = CGRect(x: (stride+1.0) - halfViewHeight, y: 0.0, width: viewHeight, height: viewHeight)
-                let circle = UIView(frame: frm)
-                circle.layer.cornerRadius = halfViewHeight
-                circle.backgroundColor = borderColor
-                self.dotsView.addSubview(circle)
-            }
-        }
-    }
-    
+
     var isToday : Bool = false {
         
         didSet {
@@ -59,6 +39,14 @@ class CalendarDayCell: UICollectionViewCell {
             }
             
         }
+    }
+    
+    var mood: Mood = .indifferent {
+        
+        didSet {
+            pBackgroundView.backgroundColor = mood.color
+        }
+        
     }
     
     lazy var pBackgroundView : UIView = {

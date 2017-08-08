@@ -73,6 +73,7 @@
 				0BFAAED91F34AF17002A93F3 /* Mood.swift */,
 				0B00BAB11F2B9E4E00DD88DA /* ToDoListItem.swift */,
 				0B00BABB1F2FBC6400DD88DA /* HabitTrackerItem.swift */,
+				0B3569511F38EC76001664B4 /* CalendarDayCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 				0B35694B1F38EBFB001664B4 /* CalendarView.swift */,
 				0B35694D1F38EC2D001664B4 /* CalendarFlowLayout.swift */,
 				0B35694F1F38EC59001664B4 /* CalendarHeaderView.swift */,
-				0B3569511F38EC76001664B4 /* CalendarDayCell.swift */,
 				0BFAAED41F33B834002A93F3 /* MoodPaletteView.xib */,
 				0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */,
 				0BFAAEDD1F34B3F6002A93F3 /* MoodCollectionViewCell.xib */,
