@@ -30,9 +30,7 @@ class MoodTrackerViewController: UIViewController, CalendarViewDataSource, Calen
         
         // change the code to get a vertical calender.
         calendarView.direction = .horizontal
-        
-        self.loadEventsInCalendar()
-        
+                
         var tomorrowComponents = DateComponents()
         tomorrowComponents.day = 1
         
@@ -90,52 +88,10 @@ class MoodTrackerViewController: UIViewController, CalendarViewDataSource, Calen
     
     // MARK : KDCalendarDelegate
     
-    func calendar(_ calendar: CalendarView, didSelectDate date : Date, withEvents events: [CalendarEvent]) {
-        
-        for event in events {
-            print("You have an event starting at \(event.startDate) : \(event.title)")
-        }
-        print("Did Select: \(date) with Events: \(events.count)")
-    }
-    
     func calendar(_ calendar: CalendarView, didScrollToMonth date : Date) {
         self.datePicker.setDate(date, animated: true)
     }
     
-    // MARK : Events
-    
-    func loadEventsInCalendar() {
-        
-        if let  startDate = self.startDate(),
-            let endDate = self.endDate() {
-            
-            let store = EKEventStore()
-            
-            let fetchEvents = { () -> Void in
-                
-                let predicate = store.predicateForEvents(withStart: startDate, end:endDate, calendars: nil)
-                
-                // if can return nil for no events between these dates
-                if let eventsBetweenDates = store.events(matching: predicate) as [EKEvent]? {
-                    self.calendarView.events = eventsBetweenDates
-                }
-            }
-            
-            // let q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-            
-            if EKEventStore.authorizationStatus(for: EKEntityType.event) != EKAuthorizationStatus.authorized {
-                
-                store.requestAccess(to: EKEntityType.event, completion: {(granted, error ) -> Void in
-                    if granted {
-                        fetchEvents()
-                    }
-                })
-            }
-            else {
-                fetchEvents()
-            }
-        }
-    }
     
     // MARK : Events
     
