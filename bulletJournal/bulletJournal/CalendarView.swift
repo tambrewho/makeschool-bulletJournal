@@ -219,7 +219,11 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         
     }
     
-    var dateMoods = [String: Mood]()
+    var dateMoods: [String: Mood] =
+                    ["8102017": .angry,
+                     "8192017": .calm,
+                     "8012017": .depressed,
+                     "8172017": .happy]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -234,8 +238,26 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         
         if (indexPath as NSIndexPath).item >= fdIndex &&
             (indexPath as NSIndexPath).item < fdIndex + nDays {
+        
+            let dayString = String((fromStartOfMonthIndexPath as NSIndexPath).item + 1)
             
-            dayCell.textLabel.text = String((fromStartOfMonthIndexPath as NSIndexPath).item + 1)
+            if let displayDate = displayDate {
+            
+                let month = Calendar.current.component(.month, from: displayDate)+1
+                let year = Calendar.current.component(.year, from: displayDate)
+                
+                let hash = "\(month)\(dayString)\(year)"
+                
+                print(hash)
+                
+                
+                if let mood = dateMoods[hash] {
+                    dayCell.mood = mood
+                }
+                
+            }
+            
+            dayCell.textLabel.text = dayString
             dayCell.isHidden = false
             
         }
@@ -250,9 +272,7 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             self.scrollViewDidEndDecelerating(collectionView)
         }
         
-        if let idx = todayIndexPath {
-            dayCell.isToday = ((idx as NSIndexPath).section == (indexPath as NSIndexPath).section && (idx as NSIndexPath).item + fdIndex == (indexPath as NSIndexPath).item)
-        }
+        
         
         return dayCell
     }

@@ -12,20 +12,7 @@ let cellColorToday = UIColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255
 let borderColor = UIColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255.0, alpha: 0.8)
 
 class CalendarDayCell: UICollectionViewCell {
-
-    var isToday : Bool = false {
-        
-        didSet {
-            
-            if isToday == true {
-                self.pBackgroundView.backgroundColor = cellColorToday
-            }
-            else {
-                self.pBackgroundView.backgroundColor = cellColorDefault
-            }
-        }
-    }
-    
+  
     override var isSelected : Bool {
         
         didSet {

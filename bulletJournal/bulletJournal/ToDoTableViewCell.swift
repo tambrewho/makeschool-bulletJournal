@@ -35,7 +35,6 @@ class ToDoTableViewCell: UITableViewCell {
             checkButton.setBackgroundImage(UIImage(named: "DoubleDashedBox"), for: .normal)
         }
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -58,8 +57,17 @@ class ToDoTableViewCell: UITableViewCell {
         else if todoItem.status == .finished {
             todoItem.status = .notStarted
         }
-        
         updateCheckButton()
+    }
+    
+    @IBAction func urgentButtonTapped(_ sender: UIButton) {
+        if sender.backgroundImage(for: .normal) == UIImage(named: "explanationMark") {
+            sender.setBackgroundImage(UIImage(named: "explanationMarkFilled"), for: .normal)
+        }
+        else {
+            sender.setBackgroundImage(UIImage(named: "explanationMark"), for: .normal)
+        }
+        print("urgent button tapped")
     }
     
 }

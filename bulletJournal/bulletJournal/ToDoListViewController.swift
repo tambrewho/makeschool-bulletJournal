@@ -11,19 +11,28 @@ import UIKit
 class ToDoListViewController: UIViewController {
 
     @IBOutlet weak var toDoTableView: UITableView!
+    @IBOutlet weak var displayTimeLabel: UILabel!
     
     var todoItems: [ToDoListItem] = [ToDoListItem()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toDoTableView.dataSource = self
+        setupDateLabel()
     }
 
+    private func setupDateLabel() {
+        let today = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d YYYY"
+        let fancyText = dateFormatter.string(from: today)
+        displayTimeLabel.text = fancyText
+    }
+    
     @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
         todoItems.append(ToDoListItem())
         toDoTableView.reloadData()
     }
-    
 }
 
 extension ToDoListViewController:  UITableViewDataSource {

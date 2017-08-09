@@ -26,40 +26,63 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8bp-5d-xVW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3jH-Yp-S2G" userLabel="Display Time Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="40" id="fgl-vb-1oV" customClass="ToDoTableViewCell" customModule="bulletJournal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="59" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fgl-vb-1oV" id="DDu-bx-V7d">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-gf-ZU1" userLabel="Check Button">
-                                                    <rect key="frame" x="36" y="9" width="28" height="28"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-gf-ZU1" userLabel="Check Button">
+                                                    <rect key="frame" x="26" y="7" width="23" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="28" id="WWO-Zy-hdn"/>
-                                                        <constraint firstAttribute="height" constant="28" id="gAK-5q-lTG"/>
+                                                        <constraint firstAttribute="width" constant="22.5" id="WWO-Zy-hdn"/>
+                                                        <constraint firstAttribute="width" secondItem="j3M-gf-ZU1" secondAttribute="height" multiplier="1:1" id="azB-Ed-kO1"/>
+                                                        <constraint firstAttribute="height" constant="22.5" id="gAK-5q-lTG"/>
                                                     </constraints>
                                                     <state key="normal" image="CheckBox"/>
                                                     <connections>
                                                         <action selector="checkButtonTapped:" destination="fgl-vb-1oV" eventType="touchUpInside" id="5ro-c2-zhi"/>
                                                     </connections>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-7U-NbP" userLabel="Task Text View">
-                                                    <rect key="frame" x="72" y="12" width="295" height="28"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-7U-NbP" userLabel="Task Text View">
+                                                    <rect key="frame" x="57" y="5" width="310" height="28"/>
                                                     <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="28" id="9lX-3T-a79"/>
+                                                        <constraint firstAttribute="height" constant="28" id="JzB-mr-teC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INc-Hk-M5D">
-                                                    <rect key="frame" x="5" y="8" width="27" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.83651011730000002" green="1" blue="0.80710273470000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4L-Cn-cdr" userLabel="Importance Button">
+                                                    <rect key="frame" x="12" y="5" width="8" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="8" id="MIJ-Cf-kSJ"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="explanationMark"/>
+                                                    <connections>
+                                                        <action selector="urgentButtonTapped:" destination="fgl-vb-1oV" eventType="touchUpInside" id="g3r-fb-kLy"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="leading" secondItem="q4L-Cn-cdr" secondAttribute="trailing" constant="6.5" id="1fo-Mt-6yY"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="5" id="A2K-Ay-atD"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="leading" secondItem="j3M-gf-ZU1" secondAttribute="trailing" constant="8" id="B5u-bO-6GG"/>
+                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="7" id="KW7-H2-lGb"/>
+                                                <constraint firstItem="q4L-Cn-cdr" firstAttribute="leading" secondItem="DDu-bx-V7d" secondAttribute="leading" constant="12" id="M9q-fs-0Cw"/>
+                                                <constraint firstAttribute="bottom" secondItem="q4L-Cn-cdr" secondAttribute="bottom" constant="7" id="OEd-n2-68e"/>
+                                                <constraint firstAttribute="trailing" secondItem="VCu-7U-NbP" secondAttribute="trailing" constant="8" id="ZZL-Lt-Jd7"/>
+                                                <constraint firstItem="q4L-Cn-cdr" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="5" id="kjr-x3-Qq5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkButton" destination="j3M-gf-ZU1" id="7fP-I3-0mL"/>
@@ -90,6 +113,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="displayTimeLabel" destination="3jH-Yp-S2G" id="fgd-ar-CIX"/>
                         <outlet property="toDoTableView" destination="8bp-5d-xVW" id="9BD-PI-PBU"/>
                     </connections>
                 </viewController>
@@ -435,5 +459,6 @@
         <image name="MessagesTab" width="27" height="23"/>
         <image name="MessagesTabSelected" width="27" height="23"/>
         <image name="MoodTracker" width="22" height="22"/>
+        <image name="explanationMark" width="9" height="34"/>
     </resources>
 </document>

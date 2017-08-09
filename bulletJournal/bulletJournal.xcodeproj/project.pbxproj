@@ -86,6 +86,14 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		0B3569531F3A3148001664B4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				0B35694D1F38EC2D001664B4 /* CalendarFlowLayout.swift */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
 		0B4415B21F2A637E0086514E = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +117,11 @@
 				0B4415BE1F2A637F0086514E /* AppDelegate.swift */,
 				0B4415C51F2A637F0086514E /* Assets.xcassets */,
 				0B4415D01F2A638C0086514E /* View Controllers */,
-				0B3569211F34FD4E001664B4 /* Protocols */,
 				0B4415DA1F2A69130086514E /* Views */,
-				0B4415CA1F2A637F0086514E /* Info.plist */,
 				0B00BAB01F2B9E3300DD88DA /* Models */,
+				0B3569531F3A3148001664B4 /* Layouts */,
+				0B3569211F34FD4E001664B4 /* Protocols */,
+				0B4415CA1F2A637F0086514E /* Info.plist */,
 			);
 			path = bulletJournal;
 			sourceTree = "<group>";
@@ -142,7 +151,6 @@
 				0B4415D81F2A690E0086514E /* ToDoTableViewCell.swift */,
 				0B00BAB91F2FB3E600DD88DA /* HabitTrackerTableViewCell.swift */,
 				0B35694B1F38EBFB001664B4 /* CalendarView.swift */,
-				0B35694D1F38EC2D001664B4 /* CalendarFlowLayout.swift */,
 				0B35694F1F38EC59001664B4 /* CalendarHeaderView.swift */,
 				0BFAAED41F33B834002A93F3 /* MoodPaletteView.xib */,
 				0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */,
