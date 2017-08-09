@@ -61,11 +61,11 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     @IBAction func urgentButtonTapped(_ sender: UIButton) {
-        if sender.backgroundImage(for: .normal) == UIImage(named: "explanationMark") {
-            sender.setBackgroundImage(UIImage(named: "explanationMarkFilled"), for: .normal)
+        if sender.image(for: .normal) == UIImage(named: "explanationMark") {
+            sender.setImage(UIImage(named: "explanationMarkFilled"), for: .normal)
         }
         else {
-            sender.setBackgroundImage(UIImage(named: "explanationMark"), for: .normal)
+            sender.setImage(UIImage(named: "explanationMark"), for: .normal)
         }
         print("urgent button tapped")
     }

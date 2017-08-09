@@ -42,46 +42,47 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-gf-ZU1" userLabel="Check Button">
-                                                    <rect key="frame" x="26" y="7" width="23" height="23"/>
+                                                    <rect key="frame" x="28" y="5" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="22.5" id="WWO-Zy-hdn"/>
+                                                        <constraint firstAttribute="width" constant="25" id="WWO-Zy-hdn"/>
                                                         <constraint firstAttribute="width" secondItem="j3M-gf-ZU1" secondAttribute="height" multiplier="1:1" id="azB-Ed-kO1"/>
-                                                        <constraint firstAttribute="height" constant="22.5" id="gAK-5q-lTG"/>
+                                                        <constraint firstAttribute="height" constant="25" id="gAK-5q-lTG"/>
                                                     </constraints>
                                                     <state key="normal" image="CheckBox"/>
                                                     <connections>
                                                         <action selector="checkButtonTapped:" destination="fgl-vb-1oV" eventType="touchUpInside" id="5ro-c2-zhi"/>
                                                     </connections>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-7U-NbP" userLabel="Task Text View">
-                                                    <rect key="frame" x="57" y="5" width="310" height="28"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-7U-NbP" userLabel="Task Text View">
+                                                    <rect key="frame" x="62" y="2" width="305" height="32"/>
                                                     <color key="backgroundColor" red="0.88789033890000002" green="0.9644545913" blue="0.99802094699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="28" id="JzB-mr-teC"/>
+                                                        <constraint firstAttribute="height" constant="32" id="n2i-kt-4nG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4L-Cn-cdr" userLabel="Importance Button">
-                                                    <rect key="frame" x="12" y="5" width="8" height="28"/>
+                                                    <rect key="frame" x="0.0" y="2" width="29" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="8" id="MIJ-Cf-kSJ"/>
+                                                        <constraint firstAttribute="width" constant="29" id="MIJ-Cf-kSJ"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="explanationMark"/>
+                                                    <state key="normal" image="explanationMark"/>
+                                                    <state key="selected" image="explanationMarkFilled"/>
                                                     <connections>
                                                         <action selector="urgentButtonTapped:" destination="fgl-vb-1oV" eventType="touchUpInside" id="g3r-fb-kLy"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="leading" secondItem="q4L-Cn-cdr" secondAttribute="trailing" constant="6.5" id="1fo-Mt-6yY"/>
-                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="5" id="A2K-Ay-atD"/>
-                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="leading" secondItem="j3M-gf-ZU1" secondAttribute="trailing" constant="8" id="B5u-bO-6GG"/>
-                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="7" id="KW7-H2-lGb"/>
-                                                <constraint firstItem="q4L-Cn-cdr" firstAttribute="leading" secondItem="DDu-bx-V7d" secondAttribute="leading" constant="12" id="M9q-fs-0Cw"/>
-                                                <constraint firstAttribute="bottom" secondItem="q4L-Cn-cdr" secondAttribute="bottom" constant="7" id="OEd-n2-68e"/>
+                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="leading" secondItem="q4L-Cn-cdr" secondAttribute="trailing" constant="-1" id="1fo-Mt-6yY"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="2" id="A2K-Ay-atD"/>
+                                                <constraint firstItem="VCu-7U-NbP" firstAttribute="leading" secondItem="j3M-gf-ZU1" secondAttribute="trailing" constant="9" id="B5u-bO-6GG"/>
+                                                <constraint firstItem="j3M-gf-ZU1" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="5" id="KW7-H2-lGb"/>
+                                                <constraint firstItem="q4L-Cn-cdr" firstAttribute="leading" secondItem="DDu-bx-V7d" secondAttribute="leading" id="M9q-fs-0Cw"/>
+                                                <constraint firstAttribute="bottom" secondItem="q4L-Cn-cdr" secondAttribute="bottom" constant="4" id="OEd-n2-68e"/>
                                                 <constraint firstAttribute="trailing" secondItem="VCu-7U-NbP" secondAttribute="trailing" constant="8" id="ZZL-Lt-Jd7"/>
-                                                <constraint firstItem="q4L-Cn-cdr" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="5" id="kjr-x3-Qq5"/>
+                                                <constraint firstItem="q4L-Cn-cdr" firstAttribute="top" secondItem="DDu-bx-V7d" secondAttribute="top" constant="2" id="kjr-x3-Qq5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -367,7 +368,7 @@
             </objects>
             <point key="canvasLocation" x="-959" y="806"/>
         </scene>
-        <!--Mood Tracker-->
+        <!--Data Source-->
         <scene sceneID="wlr-eI-0Jb">
             <objects>
                 <viewController id="lKB-Tz-bhQ" customClass="MoodTrackerViewController" customModule="bulletJournal" customModuleProvider="target" sceneMemberID="viewController">
@@ -379,10 +380,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uO5-A7-ker" customClass="CalendarView" customModule="bulletJournal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="372"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-Au-OOI" customClass="MoodPaletteView" customModule="bulletJournal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="462" width="365" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -403,25 +400,40 @@
                                     <action selector="showActionSheetButtonTapped:" destination="lKB-Tz-bhQ" eventType="touchUpInside" id="Ds7-N6-iiM"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvn-L2-79K" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="64" width="375" height="362"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" red="0.54967767957777003" green="0.5593285996596411" blue="0.60429885786802029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                        <color key="value" red="0.28818578436453635" green="0.29324558227332154" blue="0.31682265228426398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="1" green="0.70604608494940835" blue="0.68397438365104279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" red="0.54967767960000002" green="0.55932859970000004" blue="0.60429885790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lKB-Tz-bhQ" id="y0Q-jx-H9B"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uO5-A7-ker" secondAttribute="trailing" id="36b-7w-11L"/>
-                            <constraint firstItem="i1D-SP-EFy" firstAttribute="top" secondItem="uO5-A7-ker" secondAttribute="bottom" id="80E-AK-ELI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i1D-SP-EFy" secondAttribute="trailing" constant="132" id="8Df-eC-ccR"/>
                             <constraint firstAttribute="bottom" secondItem="CPa-Au-OOI" secondAttribute="bottom" constant="5" id="8mY-6e-RuL"/>
                             <constraint firstItem="i1D-SP-EFy" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leadingMargin" constant="132" id="XEc-bO-o7b"/>
                             <constraint firstAttribute="bottomMargin" secondItem="i1D-SP-EFy" secondAttribute="bottom" constant="182" id="aGH-93-31W"/>
-                            <constraint firstItem="uO5-A7-ker" firstAttribute="top" secondItem="mDZ-YM-XFe" secondAttribute="bottom" constant="60" id="fO0-zL-Ihq"/>
-                            <constraint firstItem="uO5-A7-ker" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leading" id="n8f-r7-Qpq"/>
                             <constraint firstItem="CPa-Au-OOI" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leading" id="pDP-up-o9f"/>
                             <constraint firstAttribute="trailing" secondItem="CPa-Au-OOI" secondAttribute="trailing" constant="10" id="wbj-pQ-hfH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mood Tracker" id="Fl7-Hg-rZx"/>
-                    <connections>
-                        <outlet property="calendarView" destination="uO5-A7-ker" id="GpF-RH-aIZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLQ-Pv-tp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -460,5 +472,6 @@
         <image name="MessagesTabSelected" width="27" height="23"/>
         <image name="MoodTracker" width="22" height="22"/>
         <image name="explanationMark" width="9" height="34"/>
+        <image name="explanationMarkFilled" width="8" height="33"/>
     </resources>
 </document>

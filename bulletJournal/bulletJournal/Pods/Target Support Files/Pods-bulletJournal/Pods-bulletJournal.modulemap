@@ -1,0 +1,6 @@
+framework module Pods_bulletJournal {
+  umbrella header "Pods-bulletJournal-umbrella.h"
+
+  export *
+  module * { export * }
+}
