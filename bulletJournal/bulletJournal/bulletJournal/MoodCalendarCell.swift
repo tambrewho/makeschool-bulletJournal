@@ -22,7 +22,6 @@ enum SelectionType : Int {
 
 class MoodCalendarCell: FSCalendarCell {
     
-    weak var circleImageView: UIImageView!
     weak var selectionLayer: CAShapeLayer!
     
     var selectionType: SelectionType = .none {
@@ -37,10 +36,6 @@ class MoodCalendarCell: FSCalendarCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let circleImageView = UIImageView(image: UIImage(named: "circle")!)
-        self.contentView.insertSubview(circleImageView, at: 0)
-        self.circleImageView = circleImageView
         
         let selectionLayer = CAShapeLayer()
         selectionLayer.fillColor = UIColor.black.cgColor
@@ -58,7 +53,6 @@ class MoodCalendarCell: FSCalendarCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.circleImageView.frame = self.contentView.bounds
         self.backgroundView?.frame = self.bounds.insetBy(dx: 1, dy: 1)
         self.selectionLayer.frame = self.contentView.bounds
         

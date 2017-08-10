@@ -420,6 +420,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="lKB-Tz-bhQ" id="y0Q-jx-H9B"/>
+                                    <outlet property="delegate" destination="lKB-Tz-bhQ" id="K1T-uy-2FE"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -434,6 +435,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mood Tracker" id="Fl7-Hg-rZx"/>
+                    <connections>
+                        <outlet property="calendar" destination="Zvn-L2-79K" id="EwQ-34-Flu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLQ-Pv-tp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

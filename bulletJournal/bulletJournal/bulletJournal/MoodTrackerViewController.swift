@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FSCalendar
 
-class MoodTrackerViewController: UIViewController {
+class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     fileprivate let formatter: DateFormatter = {
@@ -19,18 +19,16 @@ class MoodTrackerViewController: UIViewController {
         return formatter
     }()
     
-    fileprivate weak var calendar: FSCalendar!
+    @IBOutlet weak var calendar: FSCalendar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
+        calendar.register(MoodCalendarCell.self, forCellReuseIdentifier: "cell")
         calendar.dataSource = self
-        //calendar.delegate = self
-        view.addSubview(calendar)
-        self.calendar = calendar
+        calendar.delegate = self
     }
-    
+
     //MARK: - @IBAction
     @IBAction func showActionSheetButtonTapped(_ sender: UIButton) {
         let myActionSheet = UIAlertController(title: "Test Action Sheet", message: "Different Colors", preferredStyle: UIAlertControllerStyle.actionSheet)
@@ -52,11 +50,8 @@ class MoodTrackerViewController: UIViewController {
         
         self.present(myActionSheet, animated: true, completion: nil)
     }
-}
 
-    
-// MARK:- FSCalendarDataSource
-extension MoodTrackerViewController: FSCalendarDataSource {
+    // MARK:- FSCalendarDataSource
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
         return cell
@@ -68,21 +63,60 @@ extension MoodTrackerViewController: FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
         if self.gregorian.isDateInToday(date) {
-            return "今"
+            let day = DateFormatter()
+            day.dateFormat = "d"
+            return day.string(from: date)
         }
         return nil
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        return 2
+        return 0
+    }
+    
+    // MARK:- FSCalendarDelegate
+    
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        self.calendar.frame.size.height = bounds.height
+    }
+    
+    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition)   -> Bool {
+        return monthPosition == .current
+    }
+    
+    func calendar(_ calendar: FSCalendar, shouldDeselect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+        return monthPosition == .current
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("did select date \(self.formatter.string(from: date))")
+        self.configureVisibleCells()
+    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date) {
+        print("did deselect date \(self.formatter.string(from: date))")
+        self.configureVisibleCells()
+    }
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
+        if self.gregorian.isDateInToday(date) {
+            return [UIColor.orange]
+        }
+        return [appearance.eventDefaultColor]
     }
     
     //MARK: - private functions
+    private func configureVisibleCells() {
+        calendar.visibleCells().forEach { (cell) in
+            let date = calendar.date(for: cell)
+            let position = calendar.monthPosition(for: cell)
+            self.configure(cell: cell, for: date!, at: position)
+        }
+    }
+    
     private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         
         let diyCell = (cell as! MoodCalendarCell)
-        // Custom today circle
-        diyCell.circleImageView.isHidden = !self.gregorian.isDateInToday(date)
         // Configure selection layer
         if position == .current {
             
@@ -117,7 +151,6 @@ extension MoodTrackerViewController: FSCalendarDataSource {
             diyCell.selectionType = selectionType
             
         } else {
-            diyCell.circleImageView.isHidden = true
             diyCell.selectionLayer.isHidden = true
         }
     }
