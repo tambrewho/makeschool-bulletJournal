@@ -22,12 +22,21 @@ enum SelectionType : Int {
 
 class MoodCalendarCell: FSCalendarCell {
     
+    weak var circleImageView: UIImageView!
     weak var selectionLayer: CAShapeLayer!
     
     var selectionType: SelectionType = .none {
         didSet {
             setNeedsLayout()
         }
+    }
+    
+    var mood: Mood = .indifferent {
+        
+        didSet {
+            backgroundColor = mood.color
+        }
+        
     }
     
     required init!(coder aDecoder: NSCoder!) {
@@ -38,7 +47,9 @@ class MoodCalendarCell: FSCalendarCell {
         super.init(frame: frame)
         
         let selectionLayer = CAShapeLayer()
-        selectionLayer.fillColor = UIColor.black.cgColor
+        selectionLayer.fillColor = UIColor.clear.cgColor
+        selectionLayer.borderColor = UIColor.red.cgColor
+        selectionLayer.borderWidth = 2.0
         selectionLayer.actions = ["hidden": NSNull()]
         self.contentView.layer.insertSublayer(selectionLayer, below: self.titleLabel!.layer)
         self.selectionLayer = selectionLayer
@@ -53,6 +64,7 @@ class MoodCalendarCell: FSCalendarCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         self.backgroundView?.frame = self.bounds.insetBy(dx: 1, dy: 1)
         self.selectionLayer.frame = self.contentView.bounds
         

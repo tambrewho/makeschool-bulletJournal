@@ -381,25 +381,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-Au-OOI" customClass="MoodPaletteView" customModule="bulletJournal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="462" width="365" height="200"/>
+                                <rect key="frame" x="0.0" y="418" width="365" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="tf9-F9-igd"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1D-SP-EFy">
-                                <rect key="frame" x="148" y="455" width="79" height="30"/>
-                                <color key="backgroundColor" red="0.7097254395" green="0.70984917879999998" blue="0.70971763129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Tgo-EK-6Mz"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showActionSheetButtonTapped:" destination="lKB-Tz-bhQ" eventType="touchUpInside" id="Ds7-N6-iiM"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvn-L2-79K" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="64" width="375" height="362"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -426,10 +413,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="i1D-SP-EFy" secondAttribute="trailing" constant="132" id="8Df-eC-ccR"/>
-                            <constraint firstAttribute="bottom" secondItem="CPa-Au-OOI" secondAttribute="bottom" constant="5" id="8mY-6e-RuL"/>
-                            <constraint firstItem="i1D-SP-EFy" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leadingMargin" constant="132" id="XEc-bO-o7b"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="i1D-SP-EFy" secondAttribute="bottom" constant="182" id="aGH-93-31W"/>
+                            <constraint firstItem="Ula-gT-8fL" firstAttribute="top" secondItem="CPa-Au-OOI" secondAttribute="bottom" id="1Wl-Vn-9K2"/>
                             <constraint firstItem="CPa-Au-OOI" firstAttribute="leading" secondItem="P8D-UW-iSP" secondAttribute="leading" id="pDP-up-o9f"/>
                             <constraint firstAttribute="trailing" secondItem="CPa-Au-OOI" secondAttribute="trailing" constant="10" id="wbj-pQ-hfH"/>
                         </constraints>
@@ -437,6 +421,7 @@
                     <navigationItem key="navigationItem" title="Mood Tracker" id="Fl7-Hg-rZx"/>
                     <connections>
                         <outlet property="calendar" destination="Zvn-L2-79K" id="EwQ-34-Flu"/>
+                        <outlet property="moodPaletteItem" destination="CPa-Au-OOI" id="jkI-4l-pOY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLQ-Pv-tp0" userLabel="First Responder" sceneMemberID="firstResponder"/>

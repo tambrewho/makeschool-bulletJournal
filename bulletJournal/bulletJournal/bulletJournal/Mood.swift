@@ -53,7 +53,7 @@ enum Mood: String {
             return #colorLiteral(red: 0.8433251977, green: 0.8082900643, blue: 0.9780240655, alpha: 1)
             
         case .indifferent:
-            return #colorLiteral(red: 0.7097254395, green: 0.7098491788, blue: 0.7097176313, alpha: 1)
+            return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             
         }
     }

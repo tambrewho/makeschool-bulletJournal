@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol MoodPaletteViewDelegate: class {
+    func moodPaletteViewDidSelect(mood: Mood)
+}
+
 @IBDesignable class MoodPaletteView: UIView, Nibloading {
     
     @IBOutlet var collectionView: UICollectionView!
@@ -16,6 +20,8 @@ import UIKit
     let moods = Mood.returnAllMoods()
     
     let cellIdentifier = "MoodCollectionViewCell"
+    
+    weak var delegate: MoodPaletteViewDelegate?
     
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -60,8 +66,14 @@ extension MoodPaletteView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return moods.count
     }
+    
 }
-//
-//extension MoodPaletteView: UICollectionViewDelegate {
-//    
-//}
+
+extension MoodPaletteView: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedMood = moods[indexPath.item]
+        delegate?.moodPaletteViewDidSelect(mood: selectedMood)
+    }
+    
+}

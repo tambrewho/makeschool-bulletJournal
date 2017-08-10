@@ -19,7 +19,14 @@ class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalen
         return formatter
     }()
     
+    fileprivate let dateHashFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "Mddyyyy"
+        return formatter
+    }()
+    
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var moodPaletteItem: MoodPaletteView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,28 +34,7 @@ class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalen
         calendar.register(MoodCalendarCell.self, forCellReuseIdentifier: "cell")
         calendar.dataSource = self
         calendar.delegate = self
-    }
-
-    //MARK: - @IBAction
-    @IBAction func showActionSheetButtonTapped(_ sender: UIButton) {
-        let myActionSheet = UIAlertController(title: "Test Action Sheet", message: "Different Colors", preferredStyle: UIAlertControllerStyle.actionSheet)
-        
-        let blueAction = UIAlertAction(title: "Blue", style: UIAlertActionStyle.default)
-        { (ACTION) in
-            sender.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-            print("blue button worked!")
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default)
-        { (ACTION) in
-            sender.backgroundColor = #colorLiteral(red: 0.7097254395, green: 0.7098491788, blue: 0.7097176313, alpha: 1)
-            print("cancel button worked!")
-        }
-        
-        myActionSheet.addAction(blueAction)
-        myActionSheet.addAction(cancelAction)
-        
-        self.present(myActionSheet, animated: true, completion: nil)
+        moodPaletteItem.delegate = self
     }
 
     // MARK:- FSCalendarDataSource
@@ -117,6 +103,15 @@ class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalen
     private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         
         let diyCell = (cell as! MoodCalendarCell)
+        
+        let key = dateHashFormatter.string(from: date)
+        
+        if let mood = MoodDateHash.shared.hash[key] {
+            diyCell.mood = mood
+        } else {
+            diyCell.mood = .indifferent
+        }
+        
         // Configure selection layer
         if position == .current {
             
@@ -154,4 +149,18 @@ class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalen
             diyCell.selectionLayer.isHidden = true
         }
     }
+}
+
+extension MoodTrackerViewController: MoodPaletteViewDelegate {
+    
+    func moodPaletteViewDidSelect(mood: Mood) {
+        
+        if let selectedDate = calendar.selectedDate {
+            let key = dateHashFormatter.string(from: selectedDate)
+            MoodDateHash.shared.hash[key] = mood
+            calendar.reloadData()
+        }
+        
+    }
+    
 }
