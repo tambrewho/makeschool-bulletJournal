@@ -19,15 +19,12 @@ class HabitTrackerViewController: UIViewController {
             HabitTrackerTableView.reloadData()
         }
     }
-    
-//    var habitItems: [HabitTrackerItem] = [HabitTrackerItem(title: "Meditate in the morning"),
-//                                     HabitTrackerItem(title: "Cook Dinner"),
-//                                     HabitTrackerItem(title: "Drink 8 cups of water")]
-//    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         HabitTrackerTableView.dataSource = self
         setupDateLabel()
+        habitItems = HabitRealmHelper.retrieveHabitItems()
     }
     
     private func setupDateLabel() {
@@ -39,7 +36,8 @@ class HabitTrackerViewController: UIViewController {
     }
     
     @IBAction func addHabitButtonTapped(_ sender: UIBarButtonItem) {
-        habitItems.append(HabitTrackerItem(title: ""))
+        let newHabitItem: HabitTrackerItem = HabitTrackerItem(title: "")
+        HabitRealmHelper.addHabitItem(item: newHabitItem)
         HabitTrackerTableView.reloadData()
     }
 }
@@ -65,11 +63,10 @@ extension HabitTrackerViewController:  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
-            if editingStyle == .delete {
-                habitItems.remove(at: indexPath.row)
-                tableView.reloadData()
-            }
+            HabitRealmHelper.deleteHabitItem(item: habitItems[indexPath.row])
+            habitItems = HabitRealmHelper.retrieveHabitItems()
         }
     }
 }

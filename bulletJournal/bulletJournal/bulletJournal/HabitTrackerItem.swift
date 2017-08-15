@@ -12,21 +12,27 @@ import RealmSwift
 class HabitTrackerItem: Object {
     
     dynamic var title: String = ""
-    var dayItems: [HabitTrackerDay]
+    dynamic var creationTime = NSDate()
+    let dayItems = List<HabitTrackerDay>()
     
-    init(title: String, dayItems: [HabitTrackerDay] = HabitTrackerDay.entireWeek) {
+    convenience init(title: String, dayItems: [HabitTrackerDay] = HabitTrackerDay.entireWeek) {
+        self.init()
         self.title = title
-        self.dayItems = dayItems
+        
+        for dayItem in dayItems {
+            self.dayItems.append(dayItem)
+        }
     }
 }
 
-class HabitTrackerDay {
+class HabitTrackerDay: Object {
     
-    var weekday: Weekday
-    var selected: Bool = false
+    dynamic var weekday: String = ""
+    dynamic var selected: Bool = false
     
-    init(weekday: Weekday) {
-        self.weekday = weekday
+    convenience init(weekday: Weekday) {
+        self.init()
+        self.weekday = weekday.rawValue
     }
     
     static var entireWeek: [HabitTrackerDay] {
@@ -39,6 +45,17 @@ class HabitTrackerDay {
                     HabitTrackerDay(weekday: .friday),
                     HabitTrackerDay(weekday: .saturday)]
         }
+    }
+    
+    var weekdayAsEnum: Weekday {
+        
+        get {
+            return Weekday(rawValue: weekday)!
+        }
+        set {
+            weekday = newValue.rawValue
+        }
+        
     }
     
 }

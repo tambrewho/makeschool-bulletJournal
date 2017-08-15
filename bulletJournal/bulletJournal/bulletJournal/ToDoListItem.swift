@@ -18,8 +18,8 @@ enum ToDoListItemStatus: Int {
 class ToDoListItem: Object {
     dynamic var text: String? = nil
     dynamic var boxStatus: Int = 0
-    dynamic var creationTime = NSDate()
     dynamic var urgentStatus: Bool = false
+    dynamic var creationTime = NSDate()
 
     var boxStatusEnumValue: ToDoListItemStatus {
         

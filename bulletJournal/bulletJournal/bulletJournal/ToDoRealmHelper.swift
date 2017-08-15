@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class RealmHelper {
+class ToDoRealmHelper {
     //adds To-Do List items to the To-Do List for the weekly planner screen
     static func addToDoItem(item: ToDoListItem) {
         let realm = try! Realm()

@@ -30,6 +30,7 @@ class HabitTrackerTableViewCell: UITableViewCell {
             if dayItem.selected {
                 //green
                 button.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 0.2)
+                
             } else {
                 button.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 0.2)
             }
@@ -56,11 +57,10 @@ class HabitTrackerTableViewCell: UITableViewCell {
         print("weekday button was tapped")
         
         let buttonIndex = buttons.index(of: sender)!
-        print(buttonIndex)
-        print(habitTrackerItem)
+        print(habitTrackerItem.dayItems.count)
         let dayItem = habitTrackerItem.dayItems[buttonIndex]
         
-        dayItem.selected = !dayItem.selected
+        HabitRealmHelper.invertDayItemSelectionStatus(itemToBeUpdated: dayItem)
         
         if dayItem.selected {
             //green
@@ -76,7 +76,8 @@ class HabitTrackerTableViewCell: UITableViewCell {
 extension HabitTrackerTableViewCell: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        habitTrackerItem.title = textView.text
+        HabitRealmHelper.updateHabitItem(itemToBeUpdated: habitTrackerItem,
+                                         newText: textView.text)
     }
 }
 

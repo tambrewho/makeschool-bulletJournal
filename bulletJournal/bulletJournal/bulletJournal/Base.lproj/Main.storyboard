@@ -88,6 +88,7 @@
                                         <connections>
                                             <outlet property="checkButton" destination="j3M-gf-ZU1" id="7fP-I3-0mL"/>
                                             <outlet property="taskTextView" destination="VCu-7U-NbP" id="auL-fg-XHm"/>
+                                            <outlet property="urgentButton" destination="q4L-Cn-cdr" id="bOy-Uu-JCm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

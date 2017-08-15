@@ -10,6 +10,8 @@ import UIKit
 
 class ToDoTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var urgentButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var taskTextView: UITextView!
     
@@ -20,8 +22,9 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     private func updateViews() {
-        updateCheckButton()
         taskTextView.text = todoItem.text
+        updateCheckButton()
+        updateUrgentButton()
     }
     
     private func updateCheckButton() {
@@ -34,6 +37,15 @@ class ToDoTableViewCell: UITableViewCell {
             checkButton.setBackgroundImage(UIImage(named: "DoubleDashedBox"), for: .normal)
         }
     }
+    
+    private func updateUrgentButton() {
+        if todoItem.urgentStatus == false {
+            urgentButton.setImage(UIImage(named: "explanationMarkFilled"), for: .normal)
+        } else {
+            urgentButton.setImage(UIImage(named: "explanationMark"), for: .normal)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -46,17 +58,17 @@ class ToDoTableViewCell: UITableViewCell {
         print("check button tapped")
     
         if todoItem.boxStatusEnumValue == .notStarted {
-            RealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
+            ToDoRealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
                                        newBoxStatus: .halfDone)
         }
         
         else if todoItem.boxStatusEnumValue == .halfDone {
-            RealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
+           ToDoRealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
                                        newBoxStatus: .finished)
         }
         
         else if todoItem.boxStatusEnumValue == .finished {
-            RealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
+            ToDoRealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
                                        newBoxStatus: .notStarted)
         }
         updateCheckButton()
@@ -66,11 +78,11 @@ class ToDoTableViewCell: UITableViewCell {
         //urgent button not tapped
         if todoItem.urgentStatus == false {
             sender.setImage(UIImage(named: "explanationMarkFilled"), for: .normal)
-            RealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
+            ToDoRealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
         //urgent button tapped
         } else {
             sender.setImage(UIImage(named: "explanationMark"), for: .normal)
-            RealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
+            ToDoRealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
         }
         print("urgent button tapped")
     }
@@ -80,7 +92,7 @@ class ToDoTableViewCell: UITableViewCell {
 extension ToDoTableViewCell: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        RealmHelper.updateToDoItem(itemToBeUpdated: todoItem, newText: textView.text)
+        ToDoRealmHelper.updateToDoItem(itemToBeUpdated: todoItem, newText: textView.text)
     }
     
 }

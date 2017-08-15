@@ -24,7 +24,9 @@ class ToDoListViewController: UIViewController {
         super.viewDidLoad()
         toDoTableView.dataSource = self
         setupDateLabel()
-        todoItems = RealmHelper.retrieveToDoItems()
+        todoItems = ToDoRealmHelper.retrieveToDoItems()
+        
+        
     }
 
     private func setupDateLabel() {
@@ -37,7 +39,7 @@ class ToDoListViewController: UIViewController {
     
     @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
         let newToDoItem: ToDoListItem = ToDoListItem()
-        RealmHelper.addToDoItem(item: newToDoItem)
+        ToDoRealmHelper.addToDoItem(item: newToDoItem)
         toDoTableView.reloadData()
     }
 }
@@ -57,15 +59,17 @@ extension ToDoListViewController:  UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoTableViewCell", for: indexPath) as! ToDoTableViewCell
         
         let item = todoItems[indexPath.row]
+        
         cell.todoItem = item
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            RealmHelper.deleteToDoItem(item: todoItems[indexPath.row])
-            todoItems = RealmHelper.retrieveToDoItems()
+            ToDoRealmHelper.deleteToDoItem(item: todoItems[indexPath.row])
+            todoItems = ToDoRealmHelper.retrieveToDoItems()
         }
     }
 }
