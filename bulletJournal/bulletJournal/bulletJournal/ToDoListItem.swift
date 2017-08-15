@@ -7,14 +7,30 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum ToDoListItemStatus {
-    case notStarted
-    case halfDone
-    case finished
+enum ToDoListItemStatus: Int {
+    case notStarted = 0,
+    halfDone,
+    finished
 }
 
-class ToDoListItem {
-    var text: String?
-    var status: ToDoListItemStatus = .notStarted
+class ToDoListItem: Object {
+    dynamic var text: String? = nil
+    dynamic var boxStatus: Int = 0
+    dynamic var creationTime = NSDate()
+    dynamic var urgentStatus: Bool = false
+
+    var boxStatusEnumValue: ToDoListItemStatus {
+        
+        get {
+            return ToDoListItemStatus(rawValue: boxStatus)!
+        }
+        
+        set {
+            boxStatus = newValue.rawValue
+        }
+        
+    }
+
 }

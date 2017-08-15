@@ -109,7 +109,7 @@ class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalen
         if let mood = MoodDateHash.shared.hash[key] {
             diyCell.mood = mood
         } else {
-            diyCell.mood = .indifferent
+            diyCell.mood = .background
         }
         
         // Configure selection layer

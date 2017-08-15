@@ -20,13 +20,14 @@ enum Mood: String {
     case productive
     case calm
     case indifferent
+    case background
     
     var color: UIColor {
         
         switch self {
             
         case .angry:
-            return #colorLiteral(red: 1, green: 0.4946183562, blue: 0.4877641797, alpha: 1)
+            return #colorLiteral(red: 0.9424635508, green: 0.3100583396, blue: 0.2597910105, alpha: 0.84)
             
         case .content:
             return #colorLiteral(red: 1, green: 0.7395557761, blue: 0.4782435894, alpha: 1)
@@ -54,7 +55,9 @@ enum Mood: String {
             
         case .indifferent:
             return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            
+        
+        case .background:
+            return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
     }
     

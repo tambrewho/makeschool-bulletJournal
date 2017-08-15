@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HabitTrackerViewController: UIViewController {
 
     @IBOutlet var HabitTrackerTableView: UITableView!
     @IBOutlet weak var displayTimeLabel: UILabel!
     
-    var habitItems: [HabitTrackerItem] = [HabitTrackerItem(title: "Meditate in the morning"),
-                                     HabitTrackerItem(title: "Cook Dinner"),
-                                     HabitTrackerItem(title: "Drink 8 cups of water")]
+    var habitItems: Results<HabitTrackerItem>! {
+        didSet {
+            HabitTrackerTableView.reloadData()
+        }
+    }
     
+//    var habitItems: [HabitTrackerItem] = [HabitTrackerItem(title: "Meditate in the morning"),
+//                                     HabitTrackerItem(title: "Cook Dinner"),
+//                                     HabitTrackerItem(title: "Drink 8 cups of water")]
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
         HabitTrackerTableView.dataSource = self

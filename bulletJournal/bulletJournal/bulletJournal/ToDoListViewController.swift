@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ToDoListViewController: UIViewController {
 
     @IBOutlet weak var toDoTableView: UITableView!
     @IBOutlet weak var displayTimeLabel: UILabel!
     
-    var todoItems: [ToDoListItem] = [ToDoListItem()]
+    var todoItems: Results<ToDoListItem>! {
+        didSet {
+            toDoTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toDoTableView.dataSource = self
         setupDateLabel()
+        todoItems = RealmHelper.retrieveToDoItems()
     }
 
     private func setupDateLabel() {
@@ -30,7 +36,8 @@ class ToDoListViewController: UIViewController {
     }
     
     @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
-        todoItems.append(ToDoListItem())
+        let newToDoItem: ToDoListItem = ToDoListItem()
+        RealmHelper.addToDoItem(item: newToDoItem)
         toDoTableView.reloadData()
     }
 }
@@ -57,10 +64,8 @@ extension ToDoListViewController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if editingStyle == .delete {
-                todoItems.remove(at: indexPath.row)
-                tableView.reloadData()
-            }
+            RealmHelper.deleteToDoItem(item: todoItems[indexPath.row])
+            todoItems = RealmHelper.retrieveToDoItems()
         }
     }
 }

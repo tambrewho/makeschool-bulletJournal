@@ -6,7 +6,6 @@
 //  Copyright © 2017 Make School. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
 import FSCalendar
@@ -21,17 +20,16 @@ enum SelectionType : Int {
 
 
 class MoodCalendarCell: FSCalendarCell {
-    
-    weak var circleImageView: UIImageView!
+
     weak var selectionLayer: CAShapeLayer!
-    
+
     var selectionType: SelectionType = .none {
         didSet {
             setNeedsLayout()
         }
     }
     
-    var mood: Mood = .indifferent {
+    var mood: Mood = .background {
         
         didSet {
             backgroundColor = mood.color
@@ -47,17 +45,21 @@ class MoodCalendarCell: FSCalendarCell {
         super.init(frame: frame)
         
         let selectionLayer = CAShapeLayer()
-        selectionLayer.fillColor = UIColor.clear.cgColor
-        selectionLayer.borderColor = UIColor.red.cgColor
-        selectionLayer.borderWidth = 2.0
+        let customColor = UIColor(red: 0.5, green: 1, blue: 0.3, alpha: 0)
+        selectionLayer.fillColor = customColor.cgColor
+        
+        
+        //selectionLayer.borderColor = UIColor.red.cgColor
+        //selectionLayer.borderWidth = 2.0
         selectionLayer.actions = ["hidden": NSNull()]
+        
         self.contentView.layer.insertSublayer(selectionLayer, below: self.titleLabel!.layer)
         self.selectionLayer = selectionLayer
         
-        self.shapeLayer.isHidden = true
+        self.shapeLayer.isHidden = false
         
         let view = UIView(frame: self.bounds)
-        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.12)
+        //view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.12)
         self.backgroundView = view;
         
     }

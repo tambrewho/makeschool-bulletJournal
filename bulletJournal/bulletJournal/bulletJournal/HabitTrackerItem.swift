@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class HabitTrackerItem {
+class HabitTrackerItem: Object {
     
-    var title: String
+    dynamic var title: String = ""
     var dayItems: [HabitTrackerDay]
     
     init(title: String, dayItems: [HabitTrackerDay] = HabitTrackerDay.entireWeek) {

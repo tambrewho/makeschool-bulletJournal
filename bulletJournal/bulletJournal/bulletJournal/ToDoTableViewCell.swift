@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ToDoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checkButton: UIButton!
@@ -26,7 +25,7 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     private func updateCheckButton() {
-        switch todoItem.status {
+        switch todoItem.boxStatusEnumValue {
         case .notStarted:
             checkButton.setBackgroundImage(UIImage(named: "CheckBox"), for: .normal)
         case .halfDone:
@@ -46,26 +45,32 @@ class ToDoTableViewCell: UITableViewCell {
     @IBAction func checkButtonTapped(_ sender: UIButton) {
         print("check button tapped")
     
-        if todoItem.status == .notStarted {
-            todoItem.status = .halfDone
+        if todoItem.boxStatusEnumValue == .notStarted {
+            RealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
+                                       newBoxStatus: .halfDone)
         }
         
-        else if todoItem.status == .halfDone {
-            todoItem.status = .finished
+        else if todoItem.boxStatusEnumValue == .halfDone {
+            RealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
+                                       newBoxStatus: .finished)
         }
         
-        else if todoItem.status == .finished {
-            todoItem.status = .notStarted
+        else if todoItem.boxStatusEnumValue == .finished {
+            RealmHelper.updateToDoItem(itemToBeUpdated: todoItem,
+                                       newBoxStatus: .notStarted)
         }
         updateCheckButton()
     }
     
     @IBAction func urgentButtonTapped(_ sender: UIButton) {
-        if sender.image(for: .normal) == UIImage(named: "explanationMark") {
+        //urgent button not tapped
+        if todoItem.urgentStatus == false {
             sender.setImage(UIImage(named: "explanationMarkFilled"), for: .normal)
-        }
-        else {
+            RealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
+        //urgent button tapped
+        } else {
             sender.setImage(UIImage(named: "explanationMark"), for: .normal)
+            RealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
         }
         print("urgent button tapped")
     }
@@ -75,7 +80,7 @@ class ToDoTableViewCell: UITableViewCell {
 extension ToDoTableViewCell: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        todoItem.text = textView.text
+        RealmHelper.updateToDoItem(itemToBeUpdated: todoItem, newText: textView.text)
     }
     
 }

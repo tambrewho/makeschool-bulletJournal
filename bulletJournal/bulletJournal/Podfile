@@ -6,5 +6,6 @@ target 'bulletJournal' do
 
   # Pods for bulletJournal
 	pod ‘FSCalendar’
+	pod ‘RealmSwift’
 
 end
