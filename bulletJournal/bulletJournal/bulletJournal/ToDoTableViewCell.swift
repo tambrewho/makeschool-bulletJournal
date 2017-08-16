@@ -10,7 +10,6 @@ import UIKit
 
 class ToDoTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var urgentButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var taskTextView: UITextView!
@@ -39,7 +38,7 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     private func updateUrgentButton() {
-        if todoItem.urgentStatus == false {
+        if todoItem.urgentStatus == true {
             urgentButton.setImage(UIImage(named: "explanationMarkFilled"), for: .normal)
         } else {
             urgentButton.setImage(UIImage(named: "explanationMark"), for: .normal)

@@ -26,7 +26,6 @@ class ToDoListViewController: UIViewController {
         setupDateLabel()
         todoItems = ToDoRealmHelper.retrieveToDoItems()
         
-        
     }
 
     private func setupDateLabel() {

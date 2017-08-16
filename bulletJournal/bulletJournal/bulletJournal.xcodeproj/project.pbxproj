@@ -14,7 +14,6 @@
 		0B046CC41F30E9C20062CE25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B046CC21F30E9C20062CE25 /* Main.storyboard */; };
 		0B3569201F34FD45001664B4 /* NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35691F1F34FD45001664B4 /* NibLoading.swift */; };
 		0B3569731F3B9098001664B4 /* MoodCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3569721F3B9098001664B4 /* MoodCalendarCell.swift */; };
-		0B3569751F3C9B85001664B4 /* MoodDateHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3569741F3C9B85001664B4 /* MoodDateHash.swift */; };
 		0B4415BF1F2A637F0086514E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4415BE1F2A637F0086514E /* AppDelegate.swift */; };
 		0B4415C61F2A637F0086514E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4415C51F2A637F0086514E /* Assets.xcassets */; };
 		0B4415D31F2A654B0086514E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4415D21F2A654B0086514E /* HomeViewController.swift */; };
@@ -22,6 +21,8 @@
 		0B4415DE1F2B6D790086514E /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4415DD1F2B6D790086514E /* ToDoListViewController.swift */; };
 		0BEB7DA61F4214FD002B9B8B /* ToDoRealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB7DA51F4214FD002B9B8B /* ToDoRealmHelper.swift */; };
 		0BEB7DA81F436BF4002B9B8B /* HabitRealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB7DA71F436BF4002B9B8B /* HabitRealmHelper.swift */; };
+		0BEB7DAA1F43859B002B9B8B /* MoodRealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB7DA91F43859B002B9B8B /* MoodRealmHelper.swift */; };
+		0BEB7DAC1F438756002B9B8B /* MoodDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB7DAB1F438756002B9B8B /* MoodDateItem.swift */; };
 		0BFAAED21F336BA2002A93F3 /* MoodTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAAED11F336BA2002A93F3 /* MoodTrackerViewController.swift */; };
 		0BFAAED61F33B834002A93F3 /* MoodPaletteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFAAED41F33B834002A93F3 /* MoodPaletteView.xib */; };
 		0BFAAED81F33B9FD002A93F3 /* MoodPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */; };
@@ -39,7 +40,6 @@
 		0B046CC31F30E9C20062CE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B35691F1F34FD45001664B4 /* NibLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoading.swift; sourceTree = "<group>"; };
 		0B3569721F3B9098001664B4 /* MoodCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCalendarCell.swift; sourceTree = "<group>"; };
-		0B3569741F3C9B85001664B4 /* MoodDateHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodDateHash.swift; path = ../../../../../../../../Documents/MoodDateHash.swift; sourceTree = "<group>"; };
 		0B4415BB1F2A637E0086514E /* bulletJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bulletJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4415BE1F2A637F0086514E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B4415C51F2A637F0086514E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		0B4415DD1F2B6D790086514E /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		0BEB7DA51F4214FD002B9B8B /* ToDoRealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoRealmHelper.swift; sourceTree = "<group>"; };
 		0BEB7DA71F436BF4002B9B8B /* HabitRealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitRealmHelper.swift; sourceTree = "<group>"; };
+		0BEB7DA91F43859B002B9B8B /* MoodRealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodRealmHelper.swift; sourceTree = "<group>"; };
+		0BEB7DAB1F438756002B9B8B /* MoodDateItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodDateItem.swift; sourceTree = "<group>"; };
 		0BFAAED11F336BA2002A93F3 /* MoodTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodTrackerViewController.swift; sourceTree = "<group>"; };
 		0BFAAED41F33B834002A93F3 /* MoodPaletteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodPaletteView.xib; sourceTree = "<group>"; };
 		0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodPaletteView.swift; sourceTree = "<group>"; };
@@ -77,9 +79,8 @@
 			children = (
 				0B00BAB11F2B9E4E00DD88DA /* ToDoListItem.swift */,
 				0B00BABB1F2FBC6400DD88DA /* HabitTrackerItem.swift */,
+				0BEB7DAB1F438756002B9B8B /* MoodDateItem.swift */,
 				0BFAAED91F34AF17002A93F3 /* Mood.swift */,
-				0B3569721F3B9098001664B4 /* MoodCalendarCell.swift */,
-				0B3569741F3C9B85001664B4 /* MoodDateHash.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -154,6 +155,7 @@
 				0BFAAED71F33B9FD002A93F3 /* MoodPaletteView.swift */,
 				0BFAAEDD1F34B3F6002A93F3 /* MoodCollectionViewCell.xib */,
 				0BFAAEDB1F34B367002A93F3 /* MoodCollectionViewCell.swift */,
+				0B3569721F3B9098001664B4 /* MoodCalendarCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 			children = (
 				0BEB7DA51F4214FD002B9B8B /* ToDoRealmHelper.swift */,
 				0BEB7DA71F436BF4002B9B8B /* HabitRealmHelper.swift */,
+				0BEB7DA91F43859B002B9B8B /* MoodRealmHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -317,17 +320,18 @@
 				0BFAAEDC1F34B367002A93F3 /* MoodCollectionViewCell.swift in Sources */,
 				0BFAAED81F33B9FD002A93F3 /* MoodPaletteView.swift in Sources */,
 				0B4415D31F2A654B0086514E /* HomeViewController.swift in Sources */,
-				0B3569751F3C9B85001664B4 /* MoodDateHash.swift in Sources */,
 				0BFAAEDA1F34AF17002A93F3 /* Mood.swift in Sources */,
 				0B00BAB81F2F82BD00DD88DA /* HabitTrackerViewController.swift in Sources */,
 				0B4415DE1F2B6D790086514E /* ToDoListViewController.swift in Sources */,
 				0BFAAED21F336BA2002A93F3 /* MoodTrackerViewController.swift in Sources */,
 				0B3569731F3B9098001664B4 /* MoodCalendarCell.swift in Sources */,
+				0BEB7DAA1F43859B002B9B8B /* MoodRealmHelper.swift in Sources */,
 				0B00BABC1F2FBC6400DD88DA /* HabitTrackerItem.swift in Sources */,
 				0B3569201F34FD45001664B4 /* NibLoading.swift in Sources */,
 				0B00BAB21F2B9E4E00DD88DA /* ToDoListItem.swift in Sources */,
 				0BEB7DA61F4214FD002B9B8B /* ToDoRealmHelper.swift in Sources */,
 				0B4415D91F2A690E0086514E /* ToDoTableViewCell.swift in Sources */,
+				0BEB7DAC1F438756002B9B8B /* MoodDateItem.swift in Sources */,
 				0BEB7DA81F436BF4002B9B8B /* HabitRealmHelper.swift in Sources */,
 				0B00BABA1F2FB3E600DD88DA /* HabitTrackerTableViewCell.swift in Sources */,
 			);

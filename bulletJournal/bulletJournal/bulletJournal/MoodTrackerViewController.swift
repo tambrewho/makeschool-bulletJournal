@@ -102,14 +102,14 @@ class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalen
     
     private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         
-        let diyCell = (cell as! MoodCalendarCell)
+        let moodCell = (cell as! MoodCalendarCell)
         
-        let key = dateHashFormatter.string(from: date)
+        let dateHash = dateHashFormatter.string(from: date)
         
-        if let mood = MoodDateHash.shared.hash[key] {
-            diyCell.mood = mood
+        if let moodDateHashItem = MoodRealmHelper.moodAtHash(hash: dateHash) {
+            moodCell.mood = moodDateHashItem.moodEnumValue
         } else {
-            diyCell.mood = .background
+            moodCell.mood = .background
         }
         
         // Configure selection layer
@@ -139,14 +139,14 @@ class MoodTrackerViewController: UIViewController, FSCalendarDataSource, FSCalen
                 selectionType = .none
             }
             if selectionType == .none {
-                diyCell.selectionLayer.isHidden = true
+                moodCell.selectionLayer.isHidden = true
                 return
             }
-            diyCell.selectionLayer.isHidden = false
-            diyCell.selectionType = selectionType
+            moodCell.selectionLayer.isHidden = false
+            moodCell.selectionType = selectionType
             
         } else {
-            diyCell.selectionLayer.isHidden = true
+            moodCell.selectionLayer.isHidden = true
         }
     }
 }
@@ -156,8 +156,8 @@ extension MoodTrackerViewController: MoodPaletteViewDelegate {
     func moodPaletteViewDidSelect(mood: Mood) {
         
         if let selectedDate = calendar.selectedDate {
-            let key = dateHashFormatter.string(from: selectedDate)
-            MoodDateHash.shared.hash[key] = mood
+            let dateHash = dateHashFormatter.string(from: selectedDate)
+            MoodRealmHelper.createOrUpdate(mood: mood, at: dateHash)
             calendar.reloadData()
         }
         
