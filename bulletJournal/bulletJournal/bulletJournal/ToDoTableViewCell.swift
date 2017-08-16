@@ -74,13 +74,11 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     @IBAction func urgentButtonTapped(_ sender: UIButton) {
-        //urgent button not tapped
-        if todoItem.urgentStatus == false {
-            sender.setImage(UIImage(named: "explanationMarkFilled"), for: .normal)
-            ToDoRealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
-        //urgent button tapped
-        } else {
+        if todoItem.urgentStatus == true {
             sender.setImage(UIImage(named: "explanationMark"), for: .normal)
+            ToDoRealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
+        } else {
+            sender.setImage(UIImage(named: "explanationMarkFilled"), for: .normal)
             ToDoRealmHelper.toggleToDoItemUrgentStatus(itemToBeUpdated: todoItem)
         }
         print("urgent button tapped")
