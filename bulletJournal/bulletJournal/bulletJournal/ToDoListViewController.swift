@@ -27,13 +27,21 @@ class ToDoListViewController: UIViewController {
         todoItems = ToDoRealmHelper.retrieveToDoItems()
         
     }
-
+    
     private func setupDateLabel() {
         let today = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d YYYY"
         let fancyText = dateFormatter.string(from: today)
         displayTimeLabel.text = fancyText
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
     @IBAction func plusButtonTapped(sender: UIBarButtonItem) {
@@ -43,7 +51,7 @@ class ToDoListViewController: UIViewController {
     }
 }
 
-extension ToDoListViewController:  UITableViewDataSource {
+extension ToDoListViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

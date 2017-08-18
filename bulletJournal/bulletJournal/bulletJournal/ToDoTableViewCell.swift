@@ -52,7 +52,6 @@ class ToDoTableViewCell: UITableViewCell {
         taskTextView.layer.cornerRadius = 4
     }
 
-    
     @IBAction func checkButtonTapped(_ sender: UIButton) {
         print("check button tapped")
     
@@ -87,6 +86,14 @@ class ToDoTableViewCell: UITableViewCell {
 }
 
 extension ToDoTableViewCell: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
     
     func textViewDidChange(_ textView: UITextView) {
         ToDoRealmHelper.updateToDoItem(itemToBeUpdated: todoItem, newText: textView.text)

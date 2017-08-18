@@ -75,6 +75,14 @@ class HabitTrackerTableViewCell: UITableViewCell {
 
 extension HabitTrackerTableViewCell: UITextViewDelegate {
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         HabitRealmHelper.updateHabitItem(itemToBeUpdated: habitTrackerItem,
                                          newText: textView.text)
